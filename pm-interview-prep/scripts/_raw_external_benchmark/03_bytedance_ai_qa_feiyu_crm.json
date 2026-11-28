@@ -1,0 +1,53 @@
+{
+  "project_id": "bytedance_ai_qa_feiyu_crm",
+  "project_name": "AI质检接入飞鱼CRM平台",
+  "business_background": [
+    {"fact": "飞鱼CRM连接广告投放与销售转化，销售在平台中跟进广告投放带来的表单或电话线索。", "course_evidence_ids": ["47B-QA-C00019"], "confidence": "high", "notes": ""},
+    {"fact": "团队聚焦用户留资后的线索转化效率，北极星指标是线索转化率。", "course_evidence_ids": ["47B-QA-C00015", "47B-QA-C00056", "47B-QA-C00057", "47B-QA-C00058"], "confidence": "high", "notes": ""}
+  ],
+  "business_goals": [
+    {"fact": "将质检能力落地到飞鱼端，提升质检覆盖度和时效，降低销售违规率，最终服务于线索转化。", "course_evidence_ids": ["47B-QA-C00089", "47B-QA-C00091", "47B-QA-C00092"], "confidence": "high", "notes": ""}
+  ],
+  "user_problems": [
+    {"fact": "销售外呼中可能出现消极怠工、辱骂等行为，影响线索转化。", "course_evidence_ids": ["47B-QA-C00027"], "confidence": "high", "notes": ""},
+    {"fact": "人工逐通电话质检成本高，企业普遍只能覆盖5%到15%的通话，难以及时发现风险。", "course_evidence_ids": ["47B-QA-C00030", "47B-QA-C00095"], "confidence": "high", "notes": "该5%到15%口径属于人工质检覆盖率。"}
+  ],
+  "problem_evidence": [
+    {"fact": "调研工单中，违规类工单占当日总量47.53%，包含频繁外呼、辱骂和夸大承诺等。", "course_evidence_ids": ["47B-QA-C00098-R001", "47B-QA-C00098-R002"], "confidence": "high", "notes": ""}
+  ],
+  "solution_overview": [
+    {"fact": "核心链路为ASR将录音转文字，大模型判断是否违规，前端接入质检列表与详情。", "course_evidence_ids": ["47B-QA-C00104", "47B-QA-C00105-R001", "47B-QA-C00105-R002", "47B-QA-C00105-R003", "47B-QA-C00105-R004"], "confidence": "high", "notes": ""},
+    {"fact": "前端支持按员工等维度筛选违规记录，并在详情中展示违规类型、录音、ASR全文和高亮违规词。", "course_evidence_ids": ["47B-QA-C00137-R002", "47B-QA-C00137-R003", "47B-QA-C00137-R004", "47B-QA-C00139-R002"], "confidence": "high", "notes": ""},
+    {"fact": "误判记录可反馈并删除，反馈数据用于后续优化模型准确率。", "course_evidence_ids": ["47B-QA-C00139-R003"], "confidence": "high", "notes": ""}
+  ],
+  "key_decisions": [
+    {"fact": "规则从历史违规案例中由产运和算法共同总结，再通过Prompt、测试集、调优、验收和灰度形成迭代闭环。", "course_evidence_ids": ["47B-QA-C00123", "47B-QA-C00124"], "confidence": "high", "notes": ""},
+    {"fact": "一期只支持模型内置规则，不开放客户自定义违禁词；客户配置质检规则和违禁词库规划在二期。", "course_evidence_ids": ["47B-QA-C00139-R005"], "confidence": "high", "notes": ""},
+    {"fact": "模型能力由AI_lab实现，产品参与效果验证；前端产品逻辑由产品侧负责。", "course_evidence_ids": ["47B-QA-C00105-R002", "47B-QA-C00105-R003", "47B-QA-C00105-R004"], "confidence": "high", "notes": ""}
+  ],
+  "decision_rationales": [
+    {"fact": "历史真实训练数据不足时可人工构造，规则和样例通过测试集反复验证，以满足一期落地。", "course_evidence_ids": ["47B-QA-C00105-R003", "47B-QA-C00109", "47B-QA-C00110", "47B-QA-C00123"], "confidence": "medium", "notes": "课件对历史数据与后续抽样数据使用场景的表述较分散。"}
+  ],
+  "experiment_designs": [
+    {"fact": "模型验证准备正例和负例各1500条，覆盖现有行业，产品抽检并用准确率和召回率评估。", "course_evidence_ids": ["47B-QA-C00132", "47B-QA-C00133", "47B-QA-C00134", "47B-QA-C00135"], "confidence": "high", "notes": ""},
+    {"fact": "上线后进行2周灰度，实验组2家教育客户使用新策略，对照组2家保留原规则。", "course_evidence_ids": ["47B-QA-C00141", "47B-QA-C00142", "47B-QA-C00146", "47B-QA-C00147"], "confidence": "high", "notes": ""}
+  ],
+  "result_metrics": [
+    {"fact": "灰度实验中，实验组客服违规最终占比降至34%，全量质检覆盖率表格记为70%，高风险违规拦截189条。", "course_evidence_ids": ["47B-QA-C00148-R003", "47B-QA-C00148-R005", "47B-QA-C00148-R006", "47B-QA-C00150", "47B-QA-C00151"], "confidence": "medium", "notes": "课件把70%同时标注为召回率，指标命名存在歧义。"},
+    {"fact": "课件总结称识别准确率下降11%，原因主要是漏判和违规场景总结不足。", "course_evidence_ids": ["47B-QA-C00148-R004", "47B-QA-C00153"], "confidence": "medium", "notes": "与课件后文“准确率提升至目标标准”存在冲突。"}
+  ],
+  "ownership_boundaries": [
+    {"fact": "AI_lab负责ASR与违规识别模型，工程团队负责前后端，安全法务审核规则与数据合规，运营参与调研和试点。", "course_evidence_ids": ["47B-QA-C00053-R002", "47B-QA-C00053-R004", "47B-QA-C00053-R005", "47B-QA-C00053-R006"], "confidence": "high", "notes": ""}
+  ],
+  "dependencies": [
+    {"fact": "项目依赖ASR、大模型违规识别、飞鱼前后端、质检规则合规审核和客户试点。", "course_evidence_ids": ["47B-QA-C00105-R002", "47B-QA-C00105-R003", "47B-QA-C00105-R004", "47B-QA-C00053-R005", "47B-QA-C00053-R006"], "confidence": "high", "notes": ""}
+  ],
+  "ambiguities": [
+    {"fact": "课件一处写质检覆盖率100%、基准准确率70%，实验表又写覆盖率70%并括注召回率；口径不能直接合并。", "course_evidence_ids": ["47B-QA-C00143", "47B-QA-C00148-R005"], "confidence": "high", "notes": "分析学生时需老师确认具体阶段和指标定义。"},
+    {"fact": "实验表与总结写识别准确率下降11%，但实验结论又写准确率提升至目标标准。", "course_evidence_ids": ["47B-QA-C00148-R004", "47B-QA-C00153", "47B-QA-C00156"], "confidence": "high", "notes": "课件内部明确冲突。"}
+  ],
+  "not_covered": [
+    {"fact": "课件文本没有完整列出学生所称的“行业通用八大类规则”清单。", "course_evidence_ids": ["47B-QA-C00124", "47B-QA-C00139-R002"], "confidence": "high", "notes": "因此不能依据课件认定学生列举的八类规则正确或错误。"}
+  ],
+  "source_document_ids": ["47B-QA"]
+}

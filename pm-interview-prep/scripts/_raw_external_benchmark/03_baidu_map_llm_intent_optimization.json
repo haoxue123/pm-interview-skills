@@ -1,0 +1,22 @@
+{
+  "project_id": "baidu_map_llm_intent_optimization",
+  "project_name": "商业搜索大模型意图理解优化",
+  "source_documents": [{"path": "[local source redacted]", "sha256": "7b429329095b54e50d493ef3a7fbda577652043dd3468b1b40167cfbac114ec8"}],
+  "facts": {
+    "business_background_and_goal": {"value": "商业 Query 的意图理解位于搜索链路前段，目标是在不损伤自然搜索体验的前提下，解决复杂 Query 下的商业 POI 相关性问题，提高召回相关率、CTR、ECPM 和用户搜索体验。", "evidence_ids": ["BAIDU46-C00071", "BAIDU46-C00073", "BAIDU46-C00074", "BAIDU46-C00087"]},
+    "specific_problem": {"value": "传统规则/小模型在多约束、口语化以及商业/非商业边界场景会丢失约束或判错主体，例如“颐和园附近酒店”“带儿童餐且评分4.5以上的浙菜餐厅”“找个能停车的火锅店”。", "evidence_ids": ["BAIDU46-C00182", "BAIDU46-C00184", "BAIDU46-C00185", "BAIDU46-C00186", "BAIDU46-C00196-R002", "BAIDU46-C00196-R003", "BAIDU46-C00196-R004"]},
+    "system_flow": {"value": "大模型将商业 Query 解析成标准化意图字段和 JSON，供召回模块使用；字段规范先定义“什么叫理解对”，包括商业意图、品类、地点与属性约束等。输出质量还要经召回 Top5 的相关性评估验证。", "evidence_ids": ["BAIDU46-C00198", "BAIDU46-C00200", "BAIDU46-C00220", "BAIDU46-C00121"]},
+    "prompt_strategy": {"value": "Prompt 不是无限补反例：需先确定任务边界，再要求严格 JSON 输出；对多约束 Query 先列全约束再汇总；正反例按意图类型覆盖，并针对口语化句式补例。", "evidence_ids": ["BAIDU46-C00223-R002", "BAIDU46-C00223-R003", "BAIDU46-C00223-R004", "BAIDU46-C00223-R005"]},
+    "ai_quality_lifecycle": {"value": "标准时序为前置验证、Prompt 撰写、模型效果评测、线上 AB。前置验证先用三类代表性问题验证路线；随后从问题 Query 构建 200 条人工标注的固定测试样本，按三类场景分别评估；低于 85% 的类别按 Badcase 定向迭代并回归。达到门槛后才进行北京、上海两城 10% 流量灰度，最后进入 AB 实验。", "evidence_ids": ["BAIDU46-C00191", "BAIDU46-C00193", "BAIDU46-C00194", "BAIDU46-C00225", "BAIDU46-C00226", "BAIDU46-C00227", "BAIDU46-C00228", "BAIDU46-C00229"]},
+    "experiment_and_result": {"value": "Q4 实验前两周 10% 灰度，后两周扩至 50% 对照。实验组意图准确率从 78% 到 91%，召回相关率从 71% 到 83%，广告 CTR 从 2.30% 到 3.20%，ECPM 提升 18%，换 Query 率从 21% 降到 13%。", "evidence_ids": ["BAIDU46-C00231", "BAIDU46-C00233-R002", "BAIDU46-C00233-R003", "BAIDU46-C00233-R004", "BAIDU46-C00234"]},
+    "responsibility_boundary": {"value": "PM 与算法团队共同完成前置验证和 Prompt 初版，PM 产出方案规范并推进评估；评估团队参与模型效果评测，算法与工程负责链路接入，PM、数据和工程共同进行灰度观测。PM 不应称自己训练模型。", "evidence_ids": ["BAIDU46-C00236-R003", "BAIDU46-C00236-R004", "BAIDU46-C00236-R006", "BAIDU46-C00236-R007", "BAIDU46-C00236-R008", "BAIDU46-C00236-R009"]},
+    "future_boundary": {"value": "自动化评测 pipeline 是后续优化：每日抽线上 Badcase、自动触发评测、低于阈值报警并由 PM 复核；它不能取代首轮固定测试集、人工标注评测、Badcase 归因和回归。", "evidence_ids": ["BAIDU46-C00240", "BAIDU46-C00241"]},
+    "related_but_separate_project_boundary": {"value": "POI 标签体系完善是同一文档中的前序独立项目。若问题由标签缺失或错配造成，应进入标签修复或数据同步链路，不能将其包装成大模型 Prompt 可以解决的意图问题。", "evidence_ids": ["BAIDU46-C00003-R003", "BAIDU46-C00003-R004", "BAIDU46-C00127", "BAIDU46-C00130"]}
+  },
+  "financial_ledger": {
+    "applicable": true,
+    "items": [{"item": "商业搜索广告收入", "payer": "商家或广告主", "receiver": "平台", "role": "平台收入", "definition": "意图准确性提升减少无关 POI 进入排序池，从而提升商业 POI 点击、广告 CTR 与 ECPM。", "evidence_ids": ["BAIDU46-C00073", "BAIDU46-C00074", "BAIDU46-C00234"]}],
+    "uncertainties": ["课件提供 ECPM 相对提升，未提供可计算的绝对收入和完整 ROI 账本。"]
+  },
+  "extraction_limitations": ["未使用未转写图片中的数据作结论。"]
+}

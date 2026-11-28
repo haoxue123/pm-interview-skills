@@ -1,0 +1,54 @@
+{
+  "project_id": "bytedance_ai_outbound_script_template",
+  "project_name": "AI外呼话术模板搭建",
+  "business_background": [
+    {"fact": "项目面向中小企业广告主的线索前置筛选和跟进场景。", "course_evidence_ids": ["47B-OUT-C00003", "47B-OUT-C00005"], "confidence": "high", "notes": ""}
+  ],
+  "business_goals": [
+    {"fact": "通过AI外呼线索清洗工具提高线索筛选和跟进效率、降低人工成本，并减少高意向线索流失。", "course_evidence_ids": ["47B-OUT-C00005", "47B-OUT-C00007"], "confidence": "high", "notes": ""}
+  ],
+  "user_problems": [
+    {"fact": "人工逐条筛选效率低且缺少统一价值分层标准，导致高意向线索被埋没。", "course_evidence_ids": ["47B-OUT-C00013", "47B-OUT-C00014"], "confidence": "high", "notes": ""},
+    {"fact": "不同行业用户、话术和活跃时段差异大，通用外呼策略会降低接通率和意向判断准确性。", "course_evidence_ids": ["47B-OUT-C00016", "47B-OUT-C00017"], "confidence": "high", "notes": ""}
+  ],
+  "problem_evidence": [
+    {"fact": "方案目标是用AI替代80%以上的低价值线索筛选工作，并提供10个以上行业模板和可自定义策略。", "course_evidence_ids": ["47B-OUT-C00015", "47B-OUT-C00018"], "confidence": "high", "notes": "这里是方案目标，不是上线结果。"}
+  ],
+  "solution_overview": [
+    {"fact": "完整链路是拨号、固定开场、LLM意图识别、RAG检索、LLM生成应答、TTS转语音并回复用户。", "course_evidence_ids": ["47B-OUT-C00052"], "confidence": "high", "notes": ""},
+    {"fact": "系统内置20个以上行业话术模板，包含开场白、核心问题和异议解答，广告主可以直接使用或修改。", "course_evidence_ids": ["47B-OUT-C00035"], "confidence": "high", "notes": ""},
+    {"fact": "教育行业一期意图树分为应答寒暄、信息问询、行动诉求、拒绝管控和无关异常五大类。", "course_evidence_ids": ["47B-OUT-C00060", "47B-OUT-C00062", "47B-OUT-C00066", "47B-OUT-C00071", "47B-OUT-C00076", "47B-OUT-C00080"], "confidence": "high", "notes": ""},
+    {"fact": "知识库覆盖班课介绍、班型对比、报考政策、价格优惠和高频痛点答疑。", "course_evidence_ids": ["47B-OUT-C00085", "47B-OUT-C00086", "47B-OUT-C00087", "47B-OUT-C00088", "47B-OUT-C00089", "47B-OUT-C00090"], "confidence": "high", "notes": ""}
+  ],
+  "key_decisions": [
+    {"fact": "因数据安全要求使用公司内部Seed模型。", "course_evidence_ids": ["47B-OUT-C00049"], "confidence": "high", "notes": ""},
+    {"fact": "产品采用通用工作流加行业模板和客户可修改配置的模式，而不是单一通用话术。", "course_evidence_ids": ["47B-OUT-C00017", "47B-OUT-C00018", "47B-OUT-C00031", "47B-OUT-C00035"], "confidence": "high", "notes": ""},
+    {"fact": "对未接通线索最多自动重呼3次，并避开用户休息时段。", "course_evidence_ids": ["47B-OUT-C00036"], "confidence": "high", "notes": ""}
+  ],
+  "decision_rationales": [
+    {"fact": "跨行业差异集中在用户画像、话术和时段，因此把稳定链路封装，把行业知识和策略开放配置。", "course_evidence_ids": ["47B-OUT-C00017", "47B-OUT-C00018", "47B-OUT-C00031", "47B-OUT-C00035"], "confidence": "high", "notes": ""},
+    {"fact": "Prompt需按测试结果持续迭代，对违规、拒绝等BadCase增加约束和规则。", "course_evidence_ids": ["47B-OUT-C00098", "47B-OUT-C00100", "47B-OUT-C00101", "47B-OUT-C00102", "47B-OUT-C00103", "47B-OUT-C00104", "47B-OUT-C00105"], "confidence": "high", "notes": ""}
+  ],
+  "experiment_designs": [
+    {"fact": "一期选取2个腰部教育客户，各采集1000段前置线索清洗录音；清洗后按三层语料体系沉淀4000条问答。", "course_evidence_ids": ["47B-OUT-C00054", "47B-OUT-C00055", "47B-OUT-C00056"], "confidence": "high", "notes": ""},
+    {"fact": "模型评估要求真实来源、分层抽样、全流程覆盖、去重脱敏和双人标注仲裁。", "course_evidence_ids": ["47B-OUT-C00120", "47B-OUT-C00121", "47B-OUT-C00122", "47B-OUT-C00123", "47B-OUT-C00124", "47B-OUT-C00125"], "confidence": "high", "notes": ""},
+    {"fact": "上线AB测试选取2000家广告主，1比1分实验组和对照组，周期15天并控制行业、规模和原效率等变量。", "course_evidence_ids": ["47B-OUT-C00159", "47B-OUT-C00160", "47B-OUT-C00161", "47B-OUT-C00162"], "confidence": "high", "notes": ""}
+  ],
+  "result_metrics": [
+    {"fact": "实验组线索清洗覆盖度90.2%，对照组15.3%；AI外呼接通率45.6%，线索标注准确率89.8%。", "course_evidence_ids": ["47B-OUT-C00164-R002", "47B-OUT-C00164-R003", "47B-OUT-C00164-R004"], "confidence": "high", "notes": ""},
+    {"fact": "实验组平均30分钟内跟进，高意向线索流失率8.5%，对照组分别为24小时以上和40.2%。", "course_evidence_ids": ["47B-OUT-C00164-R005", "47B-OUT-C00164-R007"], "confidence": "high", "notes": ""},
+    {"fact": "课件结论称人工筛选工作量减少70%以上，高意向线索流失率降低78.9%。", "course_evidence_ids": ["47B-OUT-C00167", "47B-OUT-C00168"], "confidence": "high", "notes": ""}
+  ],
+  "ownership_boundaries": [
+    {"fact": "学生/实习生职责包括客户调研、跨团队技术跟进、试点效果验证、提出意图树优化建议和协助AB数据复盘。", "course_evidence_ids": ["47B-OUT-C00183", "47B-OUT-C00184", "47B-OUT-C00185", "47B-OUT-C00186"], "confidence": "high", "notes": ""},
+    {"fact": "向量化由AI_lab完成，产品侧准备RAG测试集并验证召回效果。", "course_evidence_ids": ["47B-OUT-C00107", "47B-OUT-C00108", "47B-OUT-C00109"], "confidence": "high", "notes": ""}
+  ],
+  "dependencies": [
+    {"fact": "项目依赖呼叫线路、ASR/TTS/NLP模型、RAG知识库、行业模板、客户配置与CRM数据链路。", "course_evidence_ids": ["47B-OUT-C00023", "47B-OUT-C00031", "47B-OUT-C00032", "47B-OUT-C00035", "47B-OUT-C00052", "47B-OUT-C00107"], "confidence": "high", "notes": ""}
+  ],
+  "ambiguities": [],
+  "not_covered": [
+    {"fact": "课件列出了意图树，但没有明确给出每类意图何时必须由AI处理、何时必须转人工的完整决策表。", "course_evidence_ids": ["47B-OUT-C00060", "47B-OUT-C00084"], "confidence": "high", "notes": "不能把课件没有写出的人工分流规则作为唯一标准答案。"}
+  ],
+  "source_document_ids": ["47B-OUT"]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "project_id": "baijiahao_toutiao_author_recruitment",
+  "project_name": "头条作者招募",
+  "source_documents": [
+    {"path": "[local source redacted]", "sha256": "e30808db143be4bf0e7eef87d30135832137bb272aa7f985e80bceacc883df13"}
+  ],
+  "business_background": [
+    {"fact": "项目针对流失率较高垂类招募优秀作者，以冷启保底和分润策略保证30日、60日留存，补齐作者垂类结构并提升活跃。", "course_evidence_ids": ["BAIJIA-C00072", "BAIJIA-C00073", "BAIJIA-C00074", "BAIJIA-C00078"], "confidence": "high"},
+    {"fact": "优秀作者须满足信用分、近30日发文、篇均阅读、发文点击率和互动率等条件；目标引入的是粉丝1万至10万的中腰部作者。", "course_evidence_ids": ["BAIJIA-C00075", "BAIJIA-C00108", "BAIJIA-C00109", "BAIJIA-C00114", "BAIJIA-C00117-R005"], "confidence": "high"}
+  ],
+  "full_business_flow": [
+    {"step": "以近30日活跃、环同比变化和内容eCPM判断招募垂类，重点补生活和娱乐，并以教育等高eCPM作者辅助保障项目收益。", "course_evidence_ids": ["BAIJIA-C00082-R002", "BAIJIA-C00082-R007", "BAIJIA-C00082-R008", "BAIJIA-C00085", "BAIJIA-C00086"]},
+    {"step": "招募后在冷启阶段给发文和阅读双阶梯奖励，孵化阶段用基础流量分润策略倾斜；目标为当月留存80%、次月留存40%及项目ROI大于1。", "course_evidence_ids": ["BAIJIA-C00093", "BAIJIA-C00096", "BAIJIA-C00097", "BAIJIA-C00098"]},
+    {"step": "通过内容/作者双封顶及阶梯边际分成形成生态均衡池，先抵扣拉新促活成本，剩余用于中腰作者二次分润。", "course_evidence_ids": ["BAIJIA-C00166", "BAIJIA-C00169", "BAIJIA-C00170", "BAIJIA-C00175", "BAIJIA-C00176", "BAIJIA-C00177"]}
+  ],
+  "metrics": [
+    {"fact": "课件定义项目ROI为（收益-成本）/成本；项目指标不是只看eCPM。", "course_evidence_ids": ["BAIJIA-C00079", "BAIJIA-C00080"], "confidence": "high"},
+    {"fact": "内容eCPM=总收入÷（总分润PV/1000），其中分润PV是有效阅读超过5秒的PV；eCPM受内容主题与广告召回匹配、内容价值、作者成长和生态调节等因素影响。", "course_evidence_ids": ["BAIJIA-C00083", "BAIJIA-C00084", "BAIJIA-C00151", "BAIJIA-C00152", "BAIJIA-C00154-R002", "BAIJIA-C00154-R003", "BAIJIA-C00154-R004", "BAIJIA-C00154-R005", "BAIJIA-C00154-R006"], "confidence": "high"},
+    {"fact": "60天招募3500人；拉新促活支出43.56万元、基础分润支出156万元、总支出199.56万元；第4周留存81.29%，最后一周留存45.31%。", "course_evidence_ids": ["BAIJIA-C00184", "BAIJIA-C00185", "BAIJIA-C00186", "BAIJIA-C00187", "BAIJIA-C00188", "BAIJIA-C00189", "BAIJIA-C00190"], "confidence": "high"}
+  ],
+  "ownership_boundaries": [
+    {"role": "产品实习生/PM", "boundary": "制定优秀作者招募方案、设计作者分润策略并对项目整体ROI负责；数据团队承担分润数据接入和策略实验测算，工程团队负责产品能力实现，运营负责整体和垂类权益策略。", "course_evidence_ids": ["BAIJIA-C00068-R005", "BAIJIA-C00070-R002", "BAIJIA-C00070-R003", "BAIJIA-C00070-R004", "BAIJIA-C00070-R005", "BAIJIA-C00079"]}
+  ],
+  "ambiguities": [
+    "课件给出ROI公式、预算和均衡池机制，但没有给出最终ROI的完整收益分子和可复算绝对值；不能为候选人虚构最终财务结果。"
+  ]
+}

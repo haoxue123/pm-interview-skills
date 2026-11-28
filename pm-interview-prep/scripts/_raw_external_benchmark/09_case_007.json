@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_007",
+  "mining_prompt_version": "v001",
+  "generated_from": {
+    "qa_items_path": "cases/case_007/04_qa_items.json",
+    "course_selection_path": "cases/case_007/02_course_selection.json",
+    "project_fact_paths": [
+      "cases/case_007/03_standard_project_tencent_video_wechat_plugin_app_pull.json"
+    ]
+  },
+  "candidate_chains": [
+    {
+      "chain_id": "IQC-case_007-001",
+      "project_id": "tencent_video_wechat_plugin_app_pull",
+      "source_question_ids": ["Q001"],
+      "source_transcript_evidence_ids": ["T00008", "T00010", "T00016", "T00022", "T00031"],
+      "direction": {
+        "primary_direction": "generic_product",
+        "secondary_directions": ["commercial_ads"],
+        "scenario_tags": ["项目边界", "产品形态", "流量入口"],
+        "direction_confidence": "high",
+        "basis": "入口产品形态和流量来源是该站外导流项目的前提事实，追问本身也适用于多数项目的边界核验。"
+      },
+      "main_question": "你说的微信插件究竟是什么产品形态，是SDK、播放器插件、视频号还是微信中的哪个模块？流量入口在哪里？",
+      "follow_up_path": [
+        "它是腾讯视频播放器插件，还是微信中的腾讯新闻插件入口？",
+        "用户从哪个入口被拉起到腾讯视频App？"
+      ],
+      "trigger_condition": "候选人使用项目内部简称或类比描述产品，但没有明确说明产品形态、承载位置和用户入口。",
+      "interviewer_intent": "验证候选人是否真正理解项目对象、上下游边界和用户路径，而不是只记住项目名称。",
+      "evidence_sought": ["产品形态", "入口位置", "用户路径", "项目上下游边界"],
+      "stop_condition": "候选人能够用一致的产品定义说明入口、承载方和拉起后的去向。",
+      "domain_modules": ["项目定义", "系统边界", "用户路径"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "项目产品形态、入口与系统边界核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_007-002",
+      "project_id": "tencent_video_wechat_plugin_app_pull",
+      "source_question_ids": ["Q002"],
+      "source_transcript_evidence_ids": ["T00034", "T00036", "T00039", "T00041", "T00043"],
+      "direction": {
+        "primary_direction": "commercial_ads",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["站外导流", "拉起率", "流量分层", "指标口径"],
+        "direction_confidence": "high",
+        "basis": "项目通过商业价值分层选择可导流用户，并需要平衡站外流量的商业价值与App拉端目标。"
+      },
+      "main_question": "拉起率和转化率是多少？",
+      "follow_up_path": [
+        "拉端量对应的分母是什么？",
+        "插件单日总流量是否等于单推可触达用户？",
+        "哪些用户实际被下发跳端弹窗，为什么？"
+      ],
+      "trigger_condition": "候选人报出拉端量或比例，但没有同时说明分母、统计窗口、可触达范围和分层范围。",
+      "interviewer_intent": "验证候选人是否真正掌握增长漏斗、指标口径和流量分层的业务约束。",
+      "evidence_sought": ["分子和分母", "统计窗口", "单推可触达流量", "分层范围", "分层依据"],
+      "stop_condition": "候选人能以同一口径说明拉端量、可触达用户、拉起率以及用户分层原因。",
+      "domain_modules": ["指标口径", "增长漏斗", "流量分层", "机会成本"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "拉端转化的分母、可触达范围与分层策略核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_007-003",
+      "project_id": "tencent_video_wechat_plugin_app_pull",
+      "source_question_ids": ["Q003", "Q004", "Q005"],
+      "source_transcript_evidence_ids": ["T00044", "T00052", "T00066", "T00076", "T00086", "T00102", "T00138", "T00151"],
+      "direction": {
+        "primary_direction": "commercial_ads",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["双边收入", "ARPU", "广告库存", "商业化指标", "绝对值验证"],
+        "direction_confidence": "high",
+        "basis": "项目课件同时包含插件与App的收入目标、分成关系、用户价值分层和拉端后的变现逻辑。"
+      },
+      "main_question": "单用户ARPU是多少，为什么插件团队愿意把流量导给腾讯视频，最终双边绝对收入是增是减？",
+      "follow_up_path": [
+        "VV和商业化收入有什么关系，广告库存或AdLoad在其中起什么作用？",
+        "收入=DAU×ARPU时，项目背景缺口、拉端量、ARPU和最终收入结果能否按同一阶段算清？"
+      ],
+      "trigger_condition": "候选人说明了转化或局部指标，但没有将插件侧和承接侧的收益、损失、指标口径及阶段关系闭环说明。",
+      "interviewer_intent": "验证候选人是否理解商业化项目的双边价值、指标之间的推导关系，以及团队目标与项目结果的边界。",
+      "evidence_sought": ["各方收入或价值目标", "ARPU或单位价值口径", "广告库存或变现机制", "分成关系", "阶段化绝对值与相对结果"],
+      "stop_condition": "候选人能区分背景目标、单推实验、后续策略结果和团队指标，并解释双边收益为何成立。",
+      "domain_modules": ["商业价值", "指标推导", "双边取舍", "广告变现", "阶段边界"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "商业化项目中双边收入、单位价值与阶段口径核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "AdLoad相关追问包含跨团队信息，老师审核时应判断其是否适合转化为通用题。"
+    },
+    {
+      "chain_id": "IQC-case_007-004",
+      "project_id": "tencent_video_wechat_plugin_app_pull",
+      "source_question_ids": ["Q006"],
+      "source_transcript_evidence_ids": ["T00152", "T00153", "T00154", "T00155"],
+      "direction": {
+        "primary_direction": "generic_product",
+        "secondary_directions": [],
+        "scenario_tags": ["个人职责", "跨团队协作", "PRD", "决策边界"],
+        "direction_confidence": "high",
+        "basis": "问题直接围绕候选人负责模块、下游合作方和工作边界展开，属于跨业务方向的项目真实性验证。"
+      },
+      "main_question": "你在团队里具体负责哪个模块？下游合作方是谁？",
+      "follow_up_path": [
+        "问题确定后，你本人负责哪些产出？",
+        "你与算法、数据、前端和服务端各自如何分工？"
+      ],
+      "trigger_condition": "候选人描述团队工作或导师安排较多，但个人负责范围、决策增量和交付边界不够清晰。",
+      "interviewer_intent": "验证候选人的个人贡献、职责真实性和跨团队协作接口。",
+      "evidence_sought": ["本人负责模块", "具体交付物", "决策参与点", "上下游角色和协作接口"],
+      "stop_condition": "候选人能够清楚区分团队结论、导师方向与本人实际交付及推进动作。",
+      "domain_modules": ["职责边界", "个人贡献", "协作推进"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "个人职责、决策增量与跨团队接口核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    }
+  ],
+  "non_extractable_reasons": []
+}

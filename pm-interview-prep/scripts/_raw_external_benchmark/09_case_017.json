@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_017",
+  "mining_prompt_version": "v001",
+  "candidate_chains": [
+    {
+      "chain_id": "IQC-case_017-001", "project_id": "jd_ai_technician_qa", "source_question_ids": ["Q02", "Q03"], "source_transcript_evidence_ids": ["T00031", "T00062", "T00064", "T00066", "T00076"],
+      "direction": {"primary_direction": "AI产品链路与职责边界", "secondary_direction": "意图识别、RAG与知识库"}, "main_question": "这个AI系统具体怎么做，标注结果在后续如何使用？", "follow_up_path": ["要求讲系统节点", "追问学生个人负责什么", "追问标签如何产生", "追问标签后如何进入知识库和回答"], "trigger_condition": "候选人用技术名词概括流程，未说明数据/规则怎样驱动后续动作。", "interviewer_intent": "核验候选人是否真正理解AI产品从输入、分类、检索、生成到安全控制的因果链及个人职责。", "evidence_sought": ["标签树的来源和边界", "标注样本用途", "路由与检索关系", "产品、算法、运营的分工"], "stop_condition": "候选人能用具体用户问题完整串起链路，并明确交付物和边界。", "domain_modules": ["AI/RAG", "垂类知识库", "产品协作"], "genericity": "direction_specific", "candidate_strategy_title": "AI问答项目：从标签标注追问到RAG闭环", "intent_confidence": "high", "bank_status": "candidate", "teacher_review_required": true
+    },
+    {
+      "chain_id": "IQC-case_017-002", "project_id": "meituan_powerbank_replenishment_workbench", "source_question_ids": ["Q04"], "source_transcript_evidence_ids": ["T00089", "T00091", "T00097", "T00101", "T00113"],
+      "direction": {"primary_direction": "履约调度与成本效率", "secondary_direction": "多点组单、路径和定价"}, "main_question": "多点补宝为什么要路径规划，谁执行，如何形成订单和成本？", "follow_up_path": ["质疑路径需求", "追问任务/区域模型", "追问是否合单", "追问优化目标和结算方式"], "trigger_condition": "候选人只说“最优路径”，没有交代任务组织与商业机制。", "interviewer_intent": "判断方案是否建立在真实履约对象、任务合并方式和成本函数上。", "evidence_sought": ["同路线多点合单", "执行方和订单边界", "时间/成本目标", "原流程与改造流程差异"], "stop_condition": "候选人能说明多点组单如何减少空驶/重复下单、何时以时效或成本优先。", "domain_modules": ["即时履约", "地图路径", "运营工具"], "genericity": "direction_specific", "candidate_strategy_title": "履约项目：从路径规划追问到组单和成本机制", "intent_confidence": "high", "bank_status": "candidate", "teacher_review_required": true
+    },
+    {
+      "chain_id": "IQC-case_017-003", "project_id": "meituan_powerbank_replenishment_workbench", "source_question_ids": ["Q05"], "source_transcript_evidence_ids": ["T00089", "T00091", "T00097", "T00101", "T00113"],
+      "direction": {"primary_direction": "指标口径与实验归因", "secondary_direction": "预测测算与实测结果"}, "main_question": "项目上线了吗，具体效果是什么？", "follow_up_path": ["要求给上线结果", "核对指标的前后数值和业务价值"], "trigger_condition": "候选人混合预测价值、基线和AB实测。", "interviewer_intent": "判断候选人是否掌握指标口径、实验阶段与因果边界。", "evidence_sought": ["实验对象和周期", "对照与实验的原始数值", "指标口径", "预测与实测区分"], "stop_condition": "候选人按实验设计、核心指标、结果和业务关系完整说明。", "domain_modules": ["实验设计", "业务指标", "履约运营"], "genericity": "generalizable", "candidate_strategy_title": "结果题：区分商分测算、目标与AB实测", "intent_confidence": "high", "bank_status": "candidate", "teacher_review_required": true
+    },
+    {
+      "chain_id": "IQC-case_017-004", "project_id": "meituan_powerbank_third_party_dispatch", "source_question_ids": ["Q07"], "source_transcript_evidence_ids": ["T00129", "T00131", "T00133", "T00137"],
+      "direction": {"primary_direction": "异常兜底与迭代归因", "secondary_direction": "第三方履约"}, "main_question": "测试上线时有什么坑，原流程和新流程的失败处理分别是什么？", "follow_up_path": ["质疑是不是新问题", "回到改造前下单方式", "要求说具体兜底规则"], "trigger_condition": "候选人将存量问题笼统称为新坑，或只给重试次数。", "interviewer_intent": "检验候选人是否能解释异常的归因、策略迭代动机及自动与人工的权限边界。", "evidence_sought": ["旧流程失败后的处理", "新流程新增能力", "重试前判断条件", "人工介入阈值"], "stop_condition": "候选人说明异常并非由改造制造，而是可观测后用策略闭环解决。", "domain_modules": ["履约策略", "异常处理", "人工兜底"], "genericity": "direction_specific", "candidate_strategy_title": "异常题：区分历史痛点、上线观察与后续策略迭代", "intent_confidence": "high", "bank_status": "candidate", "teacher_review_required": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project_id": "douyin_brand_zone_star_search",
+  "project_name": "品专广告样式拓展（星搜一体）",
+  "source_documents": [
+    {"path": "[local source redacted]", "sha256": "c03b785c3720aad237a4e7a81b9becdda87de6040b469c31a5af13a198808afc"}
+  ],
+  "business_background": [
+    {"fact": "搜索品专是在用户完成品牌相关搜索后，于搜索结果首位出现的品牌广告；品专按固定周期、品牌相关词和投放金额以合约方式售卖。", "course_evidence_ids": ["STAR-C00027", "STAR-C00034", "STAR-C00035"], "confidence": "high"},
+    {"fact": "年单战役需在年底约一个半月完成下一年全年品专收入的60%至80%；当时样式内容承载有限，客户对ROI和营销丰富度不满意。", "course_evidence_ids": ["STAR-C00060", "STAR-C00061", "STAR-C00062"], "confidence": "high"}
+  ],
+  "full_business_flow": [
+    {"step": "达人视频通过授权视频ID接入；平台校验授权函和广告账户主体与授权主体一致，否则不准入。", "course_evidence_ids": ["STAR-C00087-R002"]},
+    {"step": "按直播和非直播场景配置不同样式；是否展示直播可配置，并接入搜索相关性校验。", "course_evidence_ids": ["STAR-C00087-R003"]},
+    {"step": "成交模型按计划ID配置暗补/挑量策略，只对存在投放问题且满足投放金额、周期、利润率等门槛的客户启用；模型和运营均有人工配置与关停边界。", "course_evidence_ids": ["STAR-C00087-R004"]}
+  ],
+  "metrics": [
+    {"fact": "样式测试中，新样式CTR为25.86%，三组主流样式对照约为17%，新样式高出约8个百分点。", "course_evidence_ids": ["STAR-C00107-R002", "STAR-C00107-R003", "STAR-C00107-R004", "STAR-C00107-R005", "STAR-C00108"], "confidence": "high"},
+    {"fact": "补量分桶显示PV补量权重越高CTR越高而ROI越差；GMV补量权重越高CTR越低而ROI越高。全量50%策略下，整体ROI由4.66升至5.79；扣除平台利润消耗后为5.59，较4.66提升20%。", "course_evidence_ids": ["STAR-C00112-R002", "STAR-C00112-R003", "STAR-C00112-R004", "STAR-C00112-R005", "STAR-C00113", "STAR-C00114", "STAR-C00115", "STAR-C00116-R002", "STAR-C00116-R003", "STAR-C00116-R004"], "confidence": "high"},
+    {"fact": "课件表述后续以大单客户专属权益使用，并将样式与效果提升带来的后续增收记录为1.1亿元；该数是后续投放结果，不能简化成战役期间项目直接新增收入。", "course_evidence_ids": ["STAR-C00121", "STAR-C00122", "STAR-C00123"], "confidence": "high"}
+  ],
+  "ownership_boundaries": [
+    {"role": "产品经理/PM", "boundary": "负责问题分析、策略与PRD、组织评审、埋点回收及线上测试订单；算法负责模型调优、分桶和策略测试，前后端及平台负责能力实现。", "course_evidence_ids": ["STAR-C00091-R003", "STAR-C00091-R004", "STAR-C00091-R014", "STAR-C00091-R015", "STAR-C00091-R017", "STAR-C00091-R018"]}
+  ],
+  "not_implemented": [
+    {"fact": "组件灵活排版因开发工程量和周期未在战役前完成，属于后续方向，不是一期已上线能力。", "course_evidence_ids": ["STAR-C00081", "STAR-C00082-R004"]}
+  ],
+  "ambiguities": [
+    "课件描述1.1亿元为后续投放带来的增收，但未给出该收入的完整归因实验口径。"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "project_id": "iqiyi_hot_drama_dynamic_exit",
+  "project_name": "大剧上线的曝光动态退场策略",
+  "source_documents": [{"path": "[local source redacted]", "sha256": "2814071fc074ce8899932d3d0729e5cbb11fbdc3f6876c060b9a7dd8e7a5efe9"}],
+  "facts": {
+    "business_background": {"value": "长视频推荐通过召回、排序和重排序将节目展示在首页等场景，团队兼顾播放转化、点击、播放时长和会员收入。", "evidence_ids": ["IQYDRAMA46-C00003", "IQYDRAMA46-C00009", "IQYDRAMA46-C00038-R001", "IQYDRAMA46-C00038-R004"]},
+    "problem": {"value": "大剧上线后的固定定坑时长不能适配不同节目的表现；当节目表现已下降仍占据头部坑位，会造成曝光浪费。", "evidence_ids": ["IQYDRAMA46-C00150"]},
+    "solution": {"value": "按节目数据动态决定退场：X 是新增用户播转率开始下降的拐点，Y 是其他节目单 UV 收入超过本节目的拐点，取 min(X, Y) 为退场阈值 N。", "evidence_ids": ["IQYDRAMA46-C00152", "IQYDRAMA46-C00153", "IQYDRAMA46-C00154", "IQYDRAMA46-C00155"]},
+    "benefit_and_boundary": {"value": "策略使每个节目按自身表现退场，保护头部坑位的转化效率；对于内容方能说明退场的数据依据。当前是一项短期、全人群定坑策略；面向用户-节目类型的分级动态退场属于后续方案。", "evidence_ids": ["IQYDRAMA46-C00135", "IQYDRAMA46-C00137", "IQYDRAMA46-C00142", "IQYDRAMA46-C00147"]},
+    "future_design_constraint": {"value": "迁移到新内容形态时，不能只复用“退场”名称；须重新确定内容生命周期、观察窗口、节目级指标、用户分层和对应的实验验证。", "evidence_ids": ["IQYDRAMA46-C00140", "IQYDRAMA46-C00141", "IQYDRAMA46-C00147"]},
+    "responsibility_boundary": {"value": "PM 围绕数据分析、策略定义、排期协作和实验推进工作；BI 构建偏好标签，算法和工程实现计算和策略。", "evidence_ids": ["IQYDRAMA46-C00140", "IQYDRAMA46-C00143", "IQYDRAMA46-C00147"]},
+    "result_boundary": {"value": "课件只确认首页热播区播转率、单 UV 收入和用户体验改善的方向，未提供可安全复述的最终绝对值。", "evidence_ids": ["IQYDRAMA46-C00157", "IQYDRAMA46-C00158", "IQYDRAMA46-C00159"]}
+  },
+  "financial_ledger": {
+    "applicable": true,
+    "items": [{"item": "推荐路径会员付费收入", "payer": "用户", "receiver": "平台", "role": "平台收入", "definition": "通过推荐路径引导产生的会员付费收入除以曝光用户或播放用户，形成单曝光用户收入或单播放用户收入。", "evidence_ids": ["IQYDRAMA46-C00038-R004", "IQYDRAMA46-C00038-R005"]}],
+    "uncertainties": ["课件没有给出本项目收入绝对数。"]
+  },
+  "extraction_limitations": ["未使用未转写图片中的数据作结论。"]
+}

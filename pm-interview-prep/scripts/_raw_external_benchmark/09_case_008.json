@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_008",
+  "mining_prompt_version": "v001",
+  "generated_from": {
+    "qa_items_path": "cases/case_008/04_qa_items.json",
+    "course_selection_path": "cases/case_008/02_course_selection.json",
+    "project_fact_paths": ["cases/case_008/03_standard_project_tmall_addon_purchase_distribution.json"]
+  },
+  "candidate_chains": [
+    {
+      "chain_id": "IQC-case_008-001",
+      "project_id": "tmall_addon_purchase_distribution",
+      "source_question_ids": ["Q001"],
+      "source_transcript_evidence_ids": ["T00004", "T00005", "T00012", "T00013"],
+      "direction": {
+        "primary_direction": "transaction",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["渠道接入", "价格规则", "订单归因", "项目介绍"],
+        "direction_confidence": "high",
+        "basis": "项目是电商公域营销渠道接入，通过商品价格规则获取订单增量。"
+      },
+      "main_question": "请挑一个之前实习中做得比较好的项目介绍。",
+      "follow_up_path": ["项目目标是什么？", "渠道准入规则是什么？", "结果指标的口径和增量归因是什么？"],
+      "trigger_condition": "候选人以结果数字介绍项目，但没有解释业务目标、机制边界、个人职责或结果口径时，面试官通常会从项目定义逐层核验。",
+      "interviewer_intent": "验证项目真实性、产品机制理解、指标口径和个人贡献。",
+      "evidence_sought": ["业务目标", "硬规则和产品流程", "个人负责模块", "指标定义与归因边界"],
+      "stop_condition": "候选人能以一致的机制和口径讲清项目目标、方案、职责及结果边界。",
+      "domain_modules": ["项目定义", "渠道机制", "指标口径", "因果归因"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "电商渠道接入项目的准入机制、价格规则与订单归因核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_008-002",
+      "project_id": "",
+      "source_question_ids": ["Q002", "Q006"],
+      "source_transcript_evidence_ids": ["T00016", "T00018", "T00020", "T00022", "T00026", "T00077"],
+      "direction": {
+        "primary_direction": "ai_product",
+        "secondary_directions": ["generic_product"],
+        "scenario_tags": ["AI辅助", "原型生成", "工作流", "Agent"],
+        "direction_confidence": "high",
+        "basis": "面试官依次询问AI用于需求分析、原型生成、具体工具和工作流平台。"
+      },
+      "main_question": "项目中有用AI吗？需求分析和原型图分别怎么设计、用什么工具？",
+      "follow_up_path": ["AI输出的是原型、HTML还是可评审的产品方案？", "是否用过Dify或Coze这样的工作流搭建平台？"],
+      "trigger_condition": "候选人只提及使用AI或工具名，但没有说明任务输入输出、本人判断、验证方式和工作流结构。",
+      "interviewer_intent": "验证候选人是否能把AI作为受控的产品能力或效率工具，而不是把核心判断外包给模型；同时验证Agent工作流实践深度。",
+      "evidence_sought": ["任务定义", "输入输出", "工具或知识调用", "人工核验", "测试与验收", "实际工作流经验"],
+      "stop_condition": "候选人能说明AI在流程中的边界、自己的决策责任、输出验证和可复现的实践。",
+      "domain_modules": ["AI产品边界", "工作流设计", "原型与测试", "人工兜底"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "AI工具使用如何落到可验证的工作流与产品判断",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_008-003",
+      "project_id": "",
+      "source_question_ids": ["Q003"],
+      "source_transcript_evidence_ids": ["T00036", "T00037", "T00038"],
+      "direction": {
+        "primary_direction": "ai_product",
+        "secondary_directions": [],
+        "scenario_tags": ["岗位认知", "模型边界", "AI产品经理"],
+        "direction_confidence": "high",
+        "basis": "面试官明确要求比较AI产品经理与传统产品经理的职能、画像和能力。"
+      },
+      "main_question": "AI产品经理和传统产品经理在职能、画像和Skill上有什么区别？",
+      "follow_up_path": ["产品、算法和工程各自对什么负责？", "AI功能如何定义合格输出、异常兜底和上线标准？"],
+      "trigger_condition": "候选人把差异停留在“会使用AI”或“优化模型”等宽泛表述，没有界定AI产品的产品化责任。",
+      "interviewer_intent": "验证候选人是否理解模型不确定性、产品职责边界和ai功能的评测闭环。",
+      "evidence_sought": ["共同产品职责", "任务定义", "评测标准", "人工兜底", "数据回流", "角色边界"],
+      "stop_condition": "候选人能明确说明产品经理在AI系统中承担的用户价值、规则、验收和上线决策责任。",
+      "domain_modules": ["任务定义", "评测", "角色边界", "上线标准"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "AI产品经理职责边界与模型产品化能力核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_008-004",
+      "project_id": "",
+      "source_question_ids": ["Q004", "Q005"],
+      "source_transcript_evidence_ids": ["T00070", "T00072", "T00073", "T00075", "T00051", "T00055", "T00058"],
+      "direction": {
+        "primary_direction": "generic_product",
+        "secondary_directions": [],
+        "scenario_tags": ["职业动机", "自主判断", "优先级", "行为面试"],
+        "direction_confidence": "high",
+        "basis": "面试官连续检查候选人为何选择产品、是否有自主职业判断，以及如何处理优先级风险。"
+      },
+      "main_question": "你为什么从市场营销转向产品经理？",
+      "follow_up_path": ["你最大的劣势是什么，能举例吗？", "你之后如何改变自己的优先级判断？"],
+      "trigger_condition": "候选人把职业选择或改进归因于他人建议，却没有给出自己的判断、行动和结果。",
+      "interviewer_intent": "验证候选人的自主选择、反思能力和在模糊环境中的优先级判断。",
+      "evidence_sought": ["本人职业判断", "具体行为案例", "优先级方法", "改善结果"],
+      "stop_condition": "候选人能把背景经历、本人选择、实际行动和结果连成完整闭环。",
+      "domain_modules": ["职业动机", "独立思考", "优先级", "复盘"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "职业动机与优先级自主判断核验",
+      "intent_confidence": "medium",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "Q004和Q005之间存在话题切换，老师审核时可决定是否拆成两张通用策略卡。"
+    }
+  ]
+}

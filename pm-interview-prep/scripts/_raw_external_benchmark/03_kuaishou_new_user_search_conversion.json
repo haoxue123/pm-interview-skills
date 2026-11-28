@@ -1,0 +1,13 @@
+{
+  "project_id": "kuaishou_new_user_search_conversion",
+  "facts": {
+    "team_goal": "搜索GMV与订单；项目聚焦提升近30天购买0单新用户的搜索成交。",
+    "problem": "新用户搜索PV占60%，GMV仅占10%；CTR为3%，低于低购买频率用户5.1%及高购买频率用户5.2%，而CVR 4.6%与其他组接近。",
+    "diagnosis": "行业与搜索词类型分布基本一致；新用户CTR-cali为30%，显著高于其他组。按行为场域拆分后，带广告交易信号的无站内行为用户占39%，CTR-cali为36.67%，是主要优化人群。",
+    "solution": "向模型增加ADX信号；新增ADX召回；仅对ADX召回商品将效率分加权至原值120%，相关性、效率、质量的排序优先级不变。",
+    "feasibility": "搜索新用户600万、ADX用户650万，重合550万，用户覆盖92%；用户×类目覆盖85%。",
+    "experiment": "50/50、观察一周。新用户CTR 3%到4.2%，GMV 200万到230万；有广告交易信号用户CTR-cali从36.67%降至7.5%。",
+    "boundary": "新用户定义是近30天购买0单，不等于没有搜索或站内行为；完全无行为用户与有内容/搜索行为用户只是其下的分层。"
+  },
+  "evidence_ids": ["47B-KS-NEWUSER-C00005", "47B-KS-NEWUSER-C00014-R002", "47B-KS-NEWUSER-C00017", "47B-KS-NEWUSER-C00027", "47B-KS-NEWUSER-C00041-R002", "47B-KS-NEWUSER-C00061-R005", "47B-KS-NEWUSER-C00072", "47B-KS-NEWUSER-C00077-R003", "47B-KS-NEWUSER-C00077-R006", "47B-KS-NEWUSER-C00086-R002", "47B-KS-NEWUSER-C00086-R003", "47B-KS-NEWUSER-C00086-R004", "47B-KS-NEWUSER-C00092-R003", "47B-KS-NEWUSER-C00092-R004", "47B-KS-NEWUSER-C00094-R003", "47B-KS-NEWUSER-C00094-R004"]
+}

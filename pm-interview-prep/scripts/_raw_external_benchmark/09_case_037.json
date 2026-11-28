@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.1",
+  "case_id": "case_037",
+  "mining_prompt_version": "v002",
+  "generated_from": {
+    "qa_items_path": "cases/case_037/04_qa_items.json",
+    "question_packages_path": "cases/case_037/04a_question_packages_v001.json",
+    "course_selection_path": "cases/case_037/02_course_selection.json",
+    "project_fact_paths": ["cases/case_037/03_standard_project_jd_ai_technician_qa.json"]
+  },
+  "candidate_chains": [
+    {
+      "chain_id": "IQC-case_037-001",
+      "project_id": "shopee_video_product_conversion_uncovered",
+      "source_question_ids": ["Q010", "Q011"],
+      "question_package_ids": ["QP-case_037-002", "QP-case_037-003"],
+      "source_transcript_evidence_ids": ["T00019", "T00022"],
+      "discussion_anchor": "短视频挂商品场景下，如何从商品评价中选择内容以支持购买决策",
+      "direction": {
+        "primary_direction": "transaction",
+        "secondary_directions": ["content_community"],
+        "scenario_tags": ["短视频电商", "评论展示", "转化优化", "规则筛选"],
+        "direction_confidence": "high",
+        "basis": "面试官围绕内容电商中的评价筛选、展示和购买转化提问。"
+      },
+      "main_question": "怎样的评论筛选条件合理、全面，重新做时如何补齐风险？",
+      "follow_up_path": ["条件是如何从转化目标推导的？", "如何判断既有条件是否合理？", "哪些真实性、有效性和风险因素尚未覆盖？"],
+      "question_nodes": [
+        {"node_id": "IQN-case_037-001", "question_id": "Q010", "question_package_id": "QP-case_037-002", "literal_question": "你认为怎样的评论筛选条件才合理、全面？形成这些条件的思考过程是什么？", "direct_task_ids": ["task_1", "task_2"], "interviewer_move": "追问规则依据", "context_evidence_ids": ["T00019"], "interviewer_intent": "验证是否能从转化目标建立筛选标准和验证方法。", "intent_confidence": "high"},
+        {"node_id": "IQN-case_037-002", "question_id": "Q011", "question_package_id": "QP-case_037-003", "literal_question": "如果重新做评论筛选，你会怎样判断已有条件是否合理、要补哪些条件、还遗漏了哪些风险？", "direct_task_ids": ["task_1", "task_2"], "interviewer_move": "扩大风险与完整性核验", "context_evidence_ids": ["T00022"], "interviewer_intent": "验证是否能从业务目标推导规则，而不是只复述已知阈值。", "intent_confidence": "high"}
+      ],
+      "trigger_condition": "候选人报出若干筛选阈值，但没有说明规则与转化目标、真实性风险和验证的关系。",
+      "interviewer_intent": "验证交易转化场景中的内容质量判断、规则设计、风险识别与实验意识。",
+      "evidence_sought": ["用户决策价值", "评论真实性", "内容相关性", "验证指标和风险边界"],
+      "stop_condition": "候选人能给出从目标到筛选、排序、风险控制和实验验证的完整决策链。",
+      "domain_modules": ["交易转化", "内容质量", "规则筛选", "实验验证"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "从购买决策价值推导内容筛选与风险校验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "该项目无对应课程事实，保留真实面试问题逻辑但不沉淀项目机制。"
+    },
+    {
+      "chain_id": "IQC-case_037-002",
+      "project_id": "jd_ai_technician_qa",
+      "source_question_ids": ["Q006", "Q007", "Q012", "Q013"],
+      "question_package_ids": ["QP-case_037-006", "QP-case_037-007", "QP-case_037-008", "QP-case_037-009"],
+      "source_transcript_evidence_ids": ["T00041", "T00050", "T00052", "T00055", "T00057"],
+      "discussion_anchor": "京东养车技师问答项目中，以施工效率改善支撑门店产能的优先级判断",
+      "direction": {
+        "primary_direction": "ai_product",
+        "secondary_directions": ["enterprise_saas", "transaction"],
+        "scenario_tags": ["一线履约", "AI问答", "指标口径", "根因归因", "方案优先级"],
+        "direction_confidence": "high",
+        "basis": "问题链同时核验 AI 问答项目的效率指标、根因证据和替代方案取舍。"
+      },
+      "main_question": "施工效率如何定义，为什么 AI 问答是值得优先验证的提效方案？",
+      "follow_up_path": ["指标的定义、分子和分母是什么？", "知识缺失和 AI 可解的结论如何得出？", "AI 能覆盖为什么不等于它最优先，如何与替代方案比较？"],
+      "question_nodes": [
+        {"node_id": "IQN-case_037-003", "question_id": "Q006", "question_package_id": "QP-case_037-006", "literal_question": "什么叫技师施工效率，如何定义？", "direct_task_ids": ["task_1"], "interviewer_move": "指标口径核验", "context_evidence_ids": ["T00041"], "interviewer_intent": "验证对核心过程指标的定义和业务含义是否真实掌握。", "intent_confidence": "high"},
+        {"node_id": "IQN-case_037-004", "question_id": "Q007", "question_package_id": "QP-case_037-007", "literal_question": "维修人员效率低有很多可能原因，为什么确认 AI 问答能大幅提升效率，并且应当被优先做？", "direct_task_ids": ["task_1", "task_2"], "interviewer_move": "从现象转向根因和优先级", "context_evidence_ids": ["T00050"], "interviewer_intent": "验证因果机制和方案优先级，而非能力罗列。", "intent_confidence": "high"},
+        {"node_id": "IQN-case_037-005", "question_id": "Q012", "question_package_id": "QP-case_037-008", "literal_question": "“知识缺失影响效率、且 AI 可有效问答”的结论是怎么得出来的？", "direct_task_ids": ["task_1"], "interviewer_move": "要求回溯证据", "context_evidence_ids": ["T00052"], "interviewer_intent": "验证结论是否由调研、数据和场景分析支持。", "intent_confidence": "high"},
+        {"node_id": "IQN-case_037-006", "question_id": "Q013", "question_package_id": "QP-case_037-009", "literal_question": "各环节拆完后，AI 能做的事情为什么就是当前最缺、最能提升技师效率的解法？", "direct_task_ids": ["task_1"], "interviewer_move": "替代方案比较", "context_evidence_ids": ["T00055", "T00057", "T00059"], "interviewer_intent": "验证能力匹配是否被误当成优先级，以及是否会做影响、成本、风险和替代方案取舍。", "intent_confidence": "high"}
+      ],
+      "trigger_condition": "候选人先给出过程指标和 AI 方案，但没有定义指标、展示因果证据或比较其他效率杠杆。",
+      "interviewer_intent": "验证 AI 项目是否建立在可定义的业务指标、可核验证据和合理的方案取舍上。",
+      "evidence_sought": ["指标公式和单位", "损耗原因的规模与时间占比", "替代措施及比较维度", "MVP 与效果验证"],
+      "stop_condition": "候选人能说明指标口径、根因证据、优先级框架、AI 边界和验证路径。",
+      "domain_modules": ["指标口径", "问题定义", "方案优先级", "AI能力边界", "效果验证"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "AI 提效项目的指标—归因—优先级连续核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_037-003",
+      "project_id": "",
+      "source_question_ids": ["Q008"],
+      "question_package_ids": ["QP-case_037-010"],
+      "source_transcript_evidence_ids": ["T00061"],
+      "discussion_anchor": "学校超市在一年内提升利润率和利润的经营 Case",
+      "direction": {
+        "primary_direction": "generic_product",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["经营拆解", "利润", "收入成本", "场景化策略"],
+        "direction_confidence": "high",
+        "basis": "面试官主动给出经营 Case，要求拆解利润与优化方向。"
+      },
+      "main_question": "如何从收入和成本两侧提升利润率和利润？",
+      "follow_up_path": [],
+      "question_nodes": [
+        {"node_id": "IQN-case_037-007", "question_id": "Q008", "question_package_id": "QP-case_037-010", "literal_question": "假设你负责学校超市，目标是在未来一年提升利润率和利润；你会从哪些方面思考并提升优化？", "direct_task_ids": ["task_1"], "interviewer_move": "主动经营 Case", "context_evidence_ids": ["T00061", "T00063"], "interviewer_intent": "验证对经营目标、收入成本结构和可验证动作的拆解能力。", "intent_confidence": "high"}
+      ],
+      "trigger_condition": "面试官主动设置一个不依赖候选人历史项目的经营场景。",
+      "interviewer_intent": "验证陌生场景下的结构化商业判断。",
+      "evidence_sought": ["目标口径", "收入与成本拆解", "关键假设", "优先级和验证"],
+      "stop_condition": "候选人能区分绝对利润与利润率，并给出有数据前提的经营动作和验证。",
+      "domain_modules": ["经营指标", "收入成本", "假设验证", "优先级"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "经营目标的利润与利润率双层拆解",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_037-004",
+      "project_id": "",
+      "source_question_ids": ["Q009"],
+      "question_package_ids": ["QP-case_037-011"],
+      "source_transcript_evidence_ids": ["T00071"],
+      "discussion_anchor": "候选人在工作、学习或科研中深度使用 AI 的实际任务",
+      "direction": {
+        "primary_direction": "ai_product",
+        "secondary_directions": ["generic_product"],
+        "scenario_tags": ["AI使用", "人机协作", "信息验证", "决策主体"],
+        "direction_confidence": "high",
+        "basis": "面试官要求给出完整的 AI 使用实例和人的思考边界。"
+      },
+      "main_question": "举一个深度使用 AI 的例子，目标、过程、问题和人的思考分别是什么？",
+      "follow_up_path": [],
+      "question_nodes": [
+        {"node_id": "IQN-case_037-008", "question_id": "Q009", "question_package_id": "QP-case_037-011", "literal_question": "举一个你深度使用 AI 的例子：怎么用、希望达成什么、遇到什么问题，以及哪些地方需要你自己思考？", "direct_task_ids": ["task_1", "task_2", "task_3"], "interviewer_move": "从工具使用转向责任边界", "context_evidence_ids": ["T00071"], "interviewer_intent": "验证真实的 AI 应用深度，以及问题定义、验证和决策是否仍由人承担。", "intent_confidence": "high"}
+      ],
+      "trigger_condition": "候选人已提到会用 AI，面试官进一步要求具体、可复盘的任务。",
+      "interviewer_intent": "验证候选人是否能把 AI 放入真实任务闭环，并保留独立判断。",
+      "evidence_sought": ["具体任务", "输入输出和工作流", "失败或质量问题", "人类验证和最终判断"],
+      "stop_condition": "候选人能给出完整实例，并说明 AI 辅助与人类决策的分界。",
+      "domain_modules": ["任务定义", "输入输出", "质量验证", "人机协作"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "AI 使用从工具描述到任务闭环和责任边界核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    }
+  ],
+  "non_extractable_reasons": []
+}

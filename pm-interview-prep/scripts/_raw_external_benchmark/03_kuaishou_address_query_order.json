@@ -1,0 +1,13 @@
+{
+  "project_id": "kuaishou_address_query_order",
+  "facts": {
+    "team_goal": "搜索GMV与订单；复搜复购为体验指标。",
+    "project_goal": "提升寻址词GMV与订单。",
+    "problem": "寻址词PV占50%、CTR 4.1%，低于商品词5.5%；相关性评测无核心问题，结果页缺少直达店铺/直播间入口。",
+    "solution": "在识别为主播、店铺、品牌或寻址+商品的query下增加店铺卡；直播态和非直播态区分展示。多候选时按query类型使用相关性、店铺类型、粉丝数和开播状态的规则圈选；结果页仅展示一家。",
+    "estimate": "预估大盘GMV增幅=寻址词PV占比50%×转化率5%×方案覆盖80%=2%；以1亿元基线GMV计，约200万元。",
+    "experiment": "50/50 A/B。实验组搜索大盘GMV 1019.3万，对照1000万，+1.9%；寻址意图GMV 722.4万，对照700万，+3.2%；店铺卡归因GMV 30.3万。",
+    "boundary": "店铺卡归因GMV不能直接等同于整体净增；课程未提供商品卡单独变化，不能据此断言商品卡无变化。"
+  },
+  "evidence_ids": ["47B-KS-ADDRESS-C00061", "47B-KS-ADDRESS-C00069-R002", "47B-KS-ADDRESS-C00069-R006", "47B-KS-ADDRESS-C00097", "47B-KS-ADDRESS-C00101", "47B-KS-ADDRESS-C00102", "47B-KS-ADDRESS-C00105-R002", "47B-KS-ADDRESS-C00108-R002", "47B-KS-ADDRESS-C00108-R003", "47B-KS-ADDRESS-C00110-R003", "47B-KS-ADDRESS-C00110-R004", "47B-KS-ADDRESS-C00112-R003"]
+}

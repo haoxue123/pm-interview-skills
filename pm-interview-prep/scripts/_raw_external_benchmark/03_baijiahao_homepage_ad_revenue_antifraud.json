@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "project_id": "baijiahao_homepage_ad_revenue_antifraud",
+  "facts": {
+    "business_problem": {"value": "作者主页广告分润按广告消费等比分配，直接激励刷广告；广告转化下降导致广告主投诉并缩减预算。", "evidence_ids": ["FND-C00096", "FND-C00101", "FND-C00102", "FND-C00113"]},
+    "metric_definitions": {"value": "CVR是广告点击后形成有效广告主回传转化的比例；广告主CPM是广告主为每千次广告展示支付的费用；异常消费占比是风控命中的消费金额除以总消费金额。", "evidence_ids": ["FND-C00107", "FND-C00109", "FND-C00111", "FND-C00112"]},
+    "solution": {"value": "将分润改为有效阅读量、作弊率、内容质量分和作者信用分共同决定的权重机制，并建设申诉、监控和分阶段放量。", "evidence_ids": ["FND-C00146", "FND-C00162", "FND-C00223", "FND-C00228"]},
+    "experiment_results": {"value": "实验组相对对照组CVR由0.9%升至1.2%，广告主CPM由8.7元升至10.2元，作弊消费占比由18.6%降至12.3%。", "evidence_ids": ["FND-C00223", "FND-C00225", "FND-C00226"]}
+  }
+}

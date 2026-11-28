@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_009",
+  "mining_prompt_version": "v001",
+  "generated_from": {
+    "qa_items_path": "cases/case_009/04_qa_items.json",
+    "course_selection_path": "cases/case_009/02_course_selection.json",
+    "project_fact_paths": [
+      "cases/case_009/03_standard_project_douyin_brand_zone_star_search.json",
+      "cases/case_009/03_standard_project_baijiahao_toutiao_author_recruitment.json"
+    ]
+  },
+  "candidate_chains": [
+    {
+      "chain_id": "IQC-case_009-001",
+      "project_id": "baijiahao_toutiao_author_recruitment",
+      "source_question_ids": ["Q003"],
+      "source_transcript_evidence_ids": ["T00010", "T00013", "T00015", "T00017", "T00019", "T00021", "T00023", "T00025", "T00027"],
+      "direction": {
+        "primary_direction": "content_community",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["内容分润", "ROI", "eCPM", "作者生态"],
+        "direction_confidence": "high",
+        "basis": "面试官围绕创作者招募项目连续核验ROI口径、收入、核心指标及eCPM驱动。"
+      },
+      "main_question": "ROI大于1如何评估？",
+      "follow_up_path": ["收入是什么？", "ROI最核心的数据是什么？", "eCPM再拆哪些影响因素？", "内容质量与千次曝光付费率是否影响eCPM？"],
+      "trigger_condition": "候选人报出ROI结果或eCPM，但没有给出分子分母、收入成本边界和指标驱动拆解。",
+      "interviewer_intent": "验证候选人是否真正理解变现项目的财务口径、指标树和策略机制。",
+      "evidence_sought": ["ROI公式", "收益与成本构成", "eCPM分子分母", "内容质量和广告匹配驱动", "策略如何覆盖成本"],
+      "stop_condition": "候选人能按同一周期和口径说清ROI、eCPM、成本回收机制及可操作驱动。",
+      "domain_modules": ["指标口径", "内容变现", "收入成本", "指标树"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "内容分润项目的ROI口径与eCPM驱动核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "follow_up_path仅保留逐字稿中实际发生的连续追问。"
+    },
+    {
+      "chain_id": "IQC-case_009-002",
+      "project_id": "douyin_brand_zone_star_search",
+      "source_question_ids": ["Q005"],
+      "source_transcript_evidence_ids": ["T00033", "T00035", "T00037"],
+      "direction": {
+        "primary_direction": "commercial_ads",
+        "secondary_directions": ["generic_product"],
+        "scenario_tags": ["年单战役", "产研协作", "算法排期", "MVP"],
+        "direction_confidence": "high",
+        "basis": "候选人以年单战役中算法迭代周期与业务节奏为例回答协作问题。"
+      },
+      "main_question": "你具体对接过产研吗？",
+      "follow_up_path": ["对接产研有什么困难？", "遇到这种问题你会怎么办？"],
+      "trigger_condition": "候选人声称参与产研协作或算法项目，但没有展示如何处理排期、依赖和业务截止时间冲突。",
+      "interviewer_intent": "验证候选人是否有跨团队推进、MVP拆分和落地决策能力。",
+      "evidence_sought": ["具体冲突", "排期与依赖", "短中长期方案", "产品与算法边界", "验收标准"],
+      "stop_condition": "候选人能讲清自己如何定义最小可交付范围、协调依赖并验证结果。",
+      "domain_modules": ["跨团队协作", "MVP", "优先级", "上线验收"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "固定业务截止期下的产研排期与MVP决策核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "实际追问链完整。"
+    },
+    {
+      "chain_id": "IQC-case_009-003",
+      "project_id": "",
+      "source_question_ids": ["Q006", "Q007"],
+      "source_transcript_evidence_ids": ["T00039", "T00041", "T00043", "T00045", "T00047", "T00049", "T00055", "T00057", "T00059", "T00063"],
+      "direction": {
+        "primary_direction": "transaction",
+        "secondary_directions": ["generic_product"],
+        "scenario_tags": ["消费信贷", "岗位意愿", "用户理解", "行业迁移"],
+        "direction_confidence": "medium",
+        "basis": "面试官从候选人的经历方向，追问其对ToC信贷、相关产品体验和用户群体的理解。"
+      },
+      "main_question": "你的业务方向倾向是什么？你对ToC信贷业务有什么想法？",
+      "follow_up_path": ["你平时使用花呗、白条或信用卡吗？", "具体使用哪类产品？", "身边使用花呗、白条的用户群体是什么样？"],
+      "trigger_condition": "候选人希望转入新行业，但只给出泛泛的岗位兴趣，没有说明产品机制、使用体验或用户观察。",
+      "interviewer_intent": "验证行业迁移的真实意愿、学习准备度和基础用户洞察，而非要求已有信贷工作经历。",
+      "evidence_sought": ["产品对象与流程", "使用体验", "用户分层", "风险与合规意识", "迁移动机"],
+      "stop_condition": "候选人能表明对业务对象的正确理解，并以具体观察说明学习路径与岗位意愿。",
+      "domain_modules": ["行业理解", "用户研究", "职业动机", "风险边界"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "新行业面试中对产品体验、用户画像与迁移动机的连续核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "仅保留面试官实际发生的产品体验与用户追问。"
+    },
+    {
+      "chain_id": "IQC-case_009-004",
+      "project_id": "",
+      "source_question_ids": ["Q009"],
+      "source_transcript_evidence_ids": ["T00073", "T00075"],
+      "direction": {
+        "primary_direction": "generic_product",
+        "secondary_directions": [],
+        "scenario_tags": ["实习意愿", "基础工作", "抗挫", "成长预期"],
+        "direction_confidence": "high",
+        "basis": "面试官由不可接受的工作状态追问到60%基础工作的接受度。"
+      },
+      "main_question": "什么样的工作状态是你不能接受的？",
+      "follow_up_path": ["如果60%是基础工作，你能接受吗？"],
+      "trigger_condition": "候选人对工作偏好表达较强，面试官需要判断其是否能承担实习阶段的基础职责。",
+      "interviewer_intent": "验证稳定性、责任感、抗挫性以及是否能把基础工作转化为业务学习和流程改善。",
+      "evidence_sought": ["基础工作接受度", "主动性", "从重复任务中发现问题的方式", "长期投入意愿"],
+      "stop_condition": "候选人能清楚说明愿意承担基础职责，并展示如何从中建立业务理解或改进流程。",
+      "domain_modules": ["行为面试", "职业动机", "执行力"],
+      "genericity": "generalizable",
+      "candidate_strategy_title": "实习基础工作接受度与成长预期核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": "实际追问链完整。"
+    }
+  ],
+  "non_extractable_reasons": [
+    "Q001项目介绍后没有发生面试官连续追问，不作为真实连续提问链沉淀。",
+    "Q004跨项目比较为单一问题，没有实际后续追问，因此未写成链。"
+  ]
+}

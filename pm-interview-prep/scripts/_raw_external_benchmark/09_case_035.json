@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_035",
+  "mining_prompt_version": "v001",
+  "generated_from": {
+    "course_selection_path": "cases/case_035/02_course_selection.json",
+    "project_fact_paths": [
+      "cases/case_035/03_standard_project_gaode_growth_ai_activity_audit.json",
+      "cases/case_035/03_standard_project_gaode_chauffeur_navigation_dwell_coupon.json"
+    ]
+  },
+  "candidate_chains": [
+    {
+      "chain_id": "IQC-case_035-001",
+      "project_id": "",
+      "source_question_ids": ["Q035-01"],
+      "source_transcript_evidence_ids": ["T00013", "T00015", "T00017"],
+      "direction": {
+        "primary_direction": "cloud_game",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["云游戏", "付费模式", "单位经济"],
+        "direction_confidence": "high",
+        "basis": "面试官从云游戏产品体验延伸到按时、订阅和买断的商业模式判断。"
+      },
+      "main_question": "云游戏有哪些付费点，按时、订阅和买断应如何选择？",
+      "follow_up_path": ["云端算力、带宽和内容成本如何影响定价？", "用户的使用频率、时长与游戏内容形态如何影响收费方式？"],
+      "trigger_condition": "候选人只列出收费方式，未给出收费方式和成本、使用行为、权益设计之间的选择逻辑。",
+      "interviewer_intent": "验证候选人能否将云游戏的技术成本与用户付费行为转化为商业化判断。",
+      "evidence_sought": ["成本构成", "用户使用频率和时长", "内容或版权模式", "订阅权益与限制"],
+      "stop_condition": "候选人能解释不同模式适用的业务条件和取舍，而非只复述名词。",
+      "domain_modules": ["商业化", "单位经济", "用户分层"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "云游戏付费模式与单位经济判断核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_035-002",
+      "project_id": "gaode_growth_ai_activity_audit",
+      "source_question_ids": ["Q035-02", "Q035-03", "Q035-04"],
+      "source_transcript_evidence_ids": ["T00031", "T00033", "T00040", "T00042", "T00045", "T00051"],
+      "direction": {
+        "primary_direction": "ai_product",
+        "secondary_directions": ["growth_monetization"],
+        "scenario_tags": ["AI审核", "平台化", "模型评测", "规则闭环"],
+        "direction_confidence": "high",
+        "basis": "面试官连续核验审核平台的通用/定制边界、上线验证、提效口径、字段和风险闭环。"
+      },
+      "main_question": "AI 审核平台哪些能力通用、哪些需要业务定制；上线前如何验证并在上线后形成规则闭环？",
+      "follow_up_path": ["具体审核哪些配置项？", "这是业务 A/B 还是模型效果验证与灰度？", "新风险应如何被人工确认并沉淀？"],
+      "trigger_condition": "候选人只讲模型或提示词，未说明规则引擎、AI、人工审批、离线评测和规则库之间的边界。",
+      "interviewer_intent": "验证候选人是否理解 AI 能力产品化、模型效果验收和人工兜底，而不是只会接入模型。",
+      "evidence_sought": ["输入字段和风险类型", "确定性与非确定性边界", "离线评测标准", "灰度目标", "人工反馈到规则库的迁移机制"],
+      "stop_condition": "候选人能够以端到端流程说明可复用架构、业务定制项、上线门槛与持续迭代机制。",
+      "domain_modules": ["AI工作流", "规则引擎", "模型评测", "人工兜底", "平台化"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "AI 审核平台的通用边界、模型验收与规则闭环核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_035-003",
+      "project_id": "gaode_chauffeur_navigation_dwell_coupon",
+      "source_question_ids": ["Q035-05", "Q035-06", "Q035-07", "Q035-08"],
+      "source_transcript_evidence_ids": ["T00057", "T00068", "T00071", "T00073", "T00076"],
+      "direction": {
+        "primary_direction": "growth_monetization",
+        "secondary_directions": ["transaction"],
+        "scenario_tags": ["补贴策略", "漏斗", "增量归因", "三组实验", "触发时机"],
+        "direction_confidence": "high",
+        "basis": "面试官从数据下钻追问到时机选择、用户链路、实验分组与周期。"
+      },
+      "main_question": "你怎样从历史数据拆出人群、场景与触发时机，并用三组实验验证新补贴策略的增量效果？",
+      "follow_up_path": ["钱效和 ROI 的分子分母是什么？", "为什么驻留 30 分钟而不是立即发券？", "空白、对照和实验组各自回答什么问题，怎样随机分组？"],
+      "trigger_condition": "候选人使用总订单、核销或触达数据替代增量指标，或把触发条件差异误认为无法随机分组。",
+      "interviewer_intent": "验证候选人是否具备增长项目中的因果归因、指标口径、策略推导与实验设计能力。",
+      "evidence_sought": ["漏斗节点", "空白组基线", "增量完单和成本口径", "人群或场景下钻", "触发时机证据", "随机分流与控制变量"],
+      "stop_condition": "候选人能将数据发现、策略规则、产品链路和实验结论按同一口径闭环说明。",
+      "domain_modules": ["实验设计", "指标口径", "增长漏斗", "补贴效率", "因果归因"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "补贴增长项目的数据下钻、增量归因与三组实验核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    },
+    {
+      "chain_id": "IQC-case_035-004",
+      "project_id": "",
+      "source_question_ids": ["Q035-09", "Q035-10"],
+      "source_transcript_evidence_ids": ["T00091", "T00093", "T00098", "T00103", "T00107"],
+      "direction": {
+        "primary_direction": "cloud_game",
+        "secondary_directions": ["generic_product"],
+        "scenario_tags": ["预约提醒", "消息触达", "异常处理", "状态机"],
+        "direction_confidence": "high",
+        "basis": "面试官要求在云游戏预约场景中设计完整路径、异常边界，并追问游戏上线时间变动。"
+      },
+      "main_question": "如何设计云游戏预约提醒的完整路径，以及上线提前、延期和消息失败等异常如何处理？",
+      "follow_up_path": ["预约记录、通知授权、去重与频控如何设计？", "点击后如何直达可游玩的云游戏并度量转化？", "上线状态变化后如何取消、更新或补发通知？"],
+      "trigger_condition": "候选人把方案停留在多渠道消息发送，没有覆盖预约状态、游戏可用状态、承接链路、异常恢复和指标闭环。",
+      "interviewer_intent": "验证候选人在陌生 ToC 场景中能否建立状态完整、可执行、可运营的产品链路。",
+      "evidence_sought": ["核心状态和用户路径", "授权与通知策略", "深链承接", "游戏上下架状态处理", "消息链路监控", "转化指标"],
+      "stop_condition": "候选人能区分正常路径、消息链路异常和业务状态变化，并说明对应产品动作。",
+      "domain_modules": ["ToC产品设计", "消息触达", "状态机", "异常兜底", "转化漏斗"],
+      "genericity": "direction_specific",
+      "candidate_strategy_title": "云游戏预约提醒的状态机、触达链路与异常兜底核验",
+      "intent_confidence": "high",
+      "bank_status": "candidate",
+      "teacher_review_required": true,
+      "notes": ""
+    }
+  ],
+  "non_extractable_reasons": []
+}

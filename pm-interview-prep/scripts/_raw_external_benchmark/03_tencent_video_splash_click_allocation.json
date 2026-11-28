@@ -1,0 +1,42 @@
+{
+  "project_id": "tencent_video_splash_click_allocation",
+  "project_name": "开机点击智能分配策略迭代",
+  "business_background_and_users": "腾讯视频移动端开机广告贡献广告大盘约25%收入；品牌广告约70%、效果广告约30%。当前整体CTR约3%，品牌保量和效果竞价价值均承压。",
+  "core_problem": "在曝光供给短期受限的情况下，以产品可控的CTR策略提高品牌交付与效果流量价值，同时控制误触、投诉和留存风险。",
+  "input_output": "输入为广告请求、获胜广告、用户特征、候选交互样式、广告计划CTR和保护人群标签；输出为是否出广告、交互样式、灵敏度和屏蔽/降频策略。",
+  "full_flow": "客户端请求→SSP判断是否出闪屏→广告后台出价模型返回获胜广告→SSP调用样式优选服务→按广告计划与用户频次执行重度低频→命中保护人群则使用低点击样式或屏蔽→客户端渲染。",
+  "human_participation": "商业产品负责目标拆解、规则和策略配置、实验与复盘；算法、SSP服务端、客户端、数据科学和设计团队分别实现模型、下发、画像与交互。",
+  "implemented_in_v1": "已有合规样式库上的个性化样式优选、重度低频点击分配、用户分层、会员/负反馈/重点地域/风险设备等保护策略。",
+  "not_implemented_in_v1": "没有生成新广告素材；课件没有提供实际eCPM、续约率或最终收入提升结果，也没有给出候选人负责合同销售的事实。",
+  "candidate_role": "可以负责产品策略、算法需求、规则配置、实验与推进；CTR预估模型由腾讯视频广告算法团队提供，不能表述为候选人训练模型。",
+  "other_roles": "广告算法团队提供CTR模型，SSP服务端实现广告与策略下发，数据科学团队写入画像，客户端/前端实现交互，售卖侧决定eCPM。",
+  "business_goals": {
+    "team_goal": "商业化产品团队的核心指标是收入规模。",
+    "project_goal": "形成在用户体验约束下为不同广告主提供合适CTR的策略体系。",
+    "north_star": "开机广告整体CTR从约3%提升至5%。",
+    "guardrails": "客诉相对初版摇一摇下降至少80%的目标；实验同时观察7日留存与保护人群影响。"
+  },
+  "brand_effect_value_relation": {
+    "brand_ads": "品牌广告约占闪屏收入70%。CTR首先是广告主市场部的交付要求；直接产品价值是提升品牌CTR达标率，降低实结、退款或续约风险，商业价值通过续约和后续预算间接体现，不要求本项目必须以eCPM作为直接验收指标。",
+    "performance_ads": "效果广告约占30%。CTR会更直接影响竞价价值、广告主出价意愿、eCPM、填充和当期收入，应与品牌广告分开评估。",
+    "answer_boundary": "不能用纯效果广告的“CTR必须直接推高eCPM”逻辑评价整个项目；也不能因为品牌侧不以eCPM验收，就直接声称收入已提升。"
+  },
+  "strategy_stages": {
+    "style_selection": "广告后台返回获胜广告后，SSP调用CTR样式优选服务，从已有合规交互样式中选择用户预期CTR最高的样式。",
+    "heavy_low_frequency": "样式优选之后按广告计划CTR和用户高点击触发频次组合高/低灵敏度样式，不是每次都使用高灵敏度。",
+    "protected_segments": "约15.6%的会员、近6个月负反馈/进线、重点监管地域、风险设备、新用户和拉活用户进入屏蔽、低点击或降频策略。"
+  },
+  "metrics": {
+    "style_selection_experiment": "两周；整体CTR 3.01%→3.52%，品牌CTR 3.21%→3.89%，品牌CTR达标率42%→68%（≥4%），7日留存无显著差异。",
+    "heavy_low_frequency_experiment": "四周；整体CTR 3.52%→5.03%，品牌CTR 3.89%→4.18%，品牌CTR达标率68%→91%（≥4%），7日留存无显著差异。",
+    "protected_segment_result": "保护策略上线后CTR无明显差异，客诉量相对重度低频阶段下降62%，对比周期一个月。",
+    "revenue_limit": "课件未记录实验后的实际续约率、实结/退款、后续预算、效果广告eCPM或收入结果；“收入未受影响”不能仅由保护人群占15.6%推出。"
+  },
+  "sales_and_delivery_boundary": "课件能确认直客、PDB、PD和竞价等广告源进入SSP填充策略，也能确认样式优选发生在获胜广告返回之后；具体合同主体和获客渠道未覆盖。CPT固定时间/位置与逐请求竞价不能混为同一履约机制。",
+  "ambiguities": [
+    "课件C00031写客诉下降≥80%的目标，C00123实际结果为相对上一阶段下降62%，应区分目标与结果。",
+    "课件C00063仍是“收入数据可以补充”的占位提示，因此不能使用C00070的简单测算表冒充真实实验收入。",
+    "课件C00097的“客诉占50%-”口径不完整，不能解释为50%的用户发生投诉。"
+  ],
+  "course_evidence_ids": ["47C-TENCENT-SPLASH-C00006-R009", "47C-TENCENT-SPLASH-C00013", "47C-TENCENT-SPLASH-C00017", "47C-TENCENT-SPLASH-C00019", "47C-TENCENT-SPLASH-C00020", "47C-TENCENT-SPLASH-C00021", "47C-TENCENT-SPLASH-C00023", "47C-TENCENT-SPLASH-C00025", "47C-TENCENT-SPLASH-C00028", "47C-TENCENT-SPLASH-C00030", "47C-TENCENT-SPLASH-C00031", "47C-TENCENT-SPLASH-C00039", "47C-TENCENT-SPLASH-C00042", "47C-TENCENT-SPLASH-C00047", "47C-TENCENT-SPLASH-C00048", "47C-TENCENT-SPLASH-C00055-R005", "47C-TENCENT-SPLASH-C00067-R003", "47C-TENCENT-SPLASH-C00067-R007", "47C-TENCENT-SPLASH-C00068", "47C-TENCENT-SPLASH-C00083", "47C-TENCENT-SPLASH-C00084", "47C-TENCENT-SPLASH-C00093-R003", "47C-TENCENT-SPLASH-C00093-R006", "47C-TENCENT-SPLASH-C00093-R007", "47C-TENCENT-SPLASH-C00094", "47C-TENCENT-SPLASH-C00111", "47C-TENCENT-SPLASH-C00120-R004", "47C-TENCENT-SPLASH-C00122", "47C-TENCENT-SPLASH-C00123"]
+}

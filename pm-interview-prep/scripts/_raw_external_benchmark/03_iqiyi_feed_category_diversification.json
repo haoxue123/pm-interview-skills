@@ -1,0 +1,16 @@
+{
+  "project_id": "iqiyi_feed_category_diversification",
+  "project_name": "首页 Feed 品类打散",
+  "source_documents": [{"path": "[local source redacted]", "sha256": "0e3d9093197eff48cfb37725bcd41746b8456d0327d8d02ef0a251f7c199054d"}],
+  "facts": {
+    "business_background": {"value": "首页推荐按历史观看、收藏和搜索等行为召回并综合兴趣、热度、时效、多样性等排序。项目要在精准推荐与内容多样性之间平衡。", "evidence_ids": ["IQYFEED46-C00026", "IQYFEED46-C00027", "IQYFEED46-C00032"]},
+    "problem_and_evidence": {"value": "用户反馈连续看到同一品类。相邻 10 个节目平均曝光品类数为 1.2；仅一个品类的窗口占 68%，播放转化率 50.8%，低于两品类的 51.3%。但单一品类未必全是问题，需先识别有多品类意愿的人群。", "evidence_ids": ["IQYFEED46-C00009", "IQYFEED46-C00036-R002", "IQYFEED46-C00038-R002", "IQYFEED46-C00038-R003", "IQYFEED46-C00052"]},
+    "root_causes": {"value": "内容池分布不均、排序多样性参数偏弱、用户强标签固化和实时正反馈导致“越点越推”。", "evidence_ids": ["IQYFEED46-C00064", "IQYFEED46-C00066", "IQYFEED46-C00068", "IQYFEED46-C00070"]},
+    "solution": {"value": "只对具备多品类意愿的目标圈层生效：相邻 10 个节目仅一个品类时，从 11—20 位中选择原排序最高的其他品类挪至第 10 位；若不存在其他品类则不打散。铁粉、动漫/综艺忠粉等不应被打散，避免误伤深度偏好。", "evidence_ids": ["IQYFEED46-C00096", "IQYFEED46-C00097", "IQYFEED46-C00100", "IQYFEED46-C00101", "IQYFEED46-C00104", "IQYFEED46-C00105"]},
+    "experiment_and_result": {"value": "对目标人群做 50% 实验组、50% 对照组的一周 AB 实验；目标人群占首页 UV 的 36%，首页播转率提升 1.13%，相邻 10 节目平均曝光品类数从 1.2 到 1.3。", "evidence_ids": ["IQYFEED46-C00111", "IQYFEED46-C00112", "IQYFEED46-C00113", "IQYFEED46-C00114", "IQYFEED46-C00118", "IQYFEED46-C00119", "IQYFEED46-C00123"]},
+    "responsibility_boundary": {"value": "PM 负责问题分析、策略和 PRD、评审组织、实验及结果回收和申请推全；算法开发策略，QA 测试。", "evidence_ids": ["IQYFEED46-C00125-R002", "IQYFEED46-C00125-R003", "IQYFEED46-C00125-R004", "IQYFEED46-C00125-R005", "IQYFEED46-C00125-R006", "IQYFEED46-C00125-R007", "IQYFEED46-C00125-R008"]},
+    "future_boundary": {"value": "动态打散位置、内容和强度属于后续方案，不能说成一期已上线能力。", "evidence_ids": ["IQYFEED46-C00131", "IQYFEED46-C00135", "IQYFEED46-C00140", "IQYFEED46-C00143"]}
+  },
+  "financial_ledger": {"applicable": true, "items": [{"item": "单 UV 会员收入", "payer": "用户", "receiver": "平台", "role": "平台收入", "definition": "内容多样性通过拓宽消费可能间接影响会员价值；不是本项目一期直接展示的实验结果。", "evidence_ids": ["IQYFEED46-C00019", "IQYFEED46-C00020"]}], "uncertainties": ["课件未给出品类打散带来的单 UV 收入绝对或实验增量。"]},
+  "extraction_limitations": ["未使用未转写图片中的数据作结论。"]
+}

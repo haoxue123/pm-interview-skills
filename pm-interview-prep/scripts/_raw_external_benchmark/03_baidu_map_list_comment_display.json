@@ -1,0 +1,54 @@
+{
+  "project_id": "baidu_map_list_comment_display",
+  "project_name": "搜索列表页评论展示功能优化",
+  "business_background": [
+    {"fact": "百度地图泛搜列表页向用户展示多个可满足需求的POI，是用户判断选择哪个地点的关键页面。", "course_evidence_ids": ["48A-MAP-COMMENT-C00006-R004", "48A-MAP-COMMENT-C00009-R002", "48A-MAP-COMMENT-C00050"], "confidence": "high", "notes": ""},
+    {"fact": "内容建设产品组负责图文内容生成、质量标准、内容召回和展示；本项目处于该团队的搜索结果展示优化阶段。", "course_evidence_ids": ["48A-MAP-COMMENT-C00002-R003", "48A-MAP-COMMENT-C00042", "48A-MAP-COMMENT-C00044-R002"], "confidence": "high", "notes": ""}
+  ],
+  "business_goals": [
+    {"fact": "通过在列表页增加评论摘要，补充用户决策信息，降低泛搜快速放弃率并提升Top1点击转化效率。", "course_evidence_ids": ["48A-MAP-COMMENT-C00053", "48A-MAP-COMMENT-C00062-R004", "48A-MAP-COMMENT-C00064", "48A-MAP-COMMENT-C00065"], "confidence": "high", "notes": ""}
+  ],
+  "user_problems": [
+    {"fact": "原列表卡片主要展示评分、品类、人均、距离和营业状态，信息趋同，难以回答“这家值不值得去”。", "course_evidence_ids": ["48A-MAP-COMMENT-C00050", "48A-MAP-COMMENT-C00055", "48A-MAP-COMMENT-C00056", "48A-MAP-COMMENT-C00057"], "confidence": "high", "notes": ""},
+    {"fact": "用户需要逐个进入详情页比较，决策路径冗长。", "course_evidence_ids": ["48A-MAP-COMMENT-C00051", "48A-MAP-COMMENT-C00060", "48A-MAP-COMMENT-C00062-R003"], "confidence": "high", "notes": ""}
+  ],
+  "problem_evidence": [
+    {"fact": "列表页停留超过5秒但未点击的用户中，泛需求场景占61%，显著高于精确需求场景22%。", "course_evidence_ids": ["48A-MAP-COMMENT-C00059"], "confidence": "high", "notes": ""},
+    {"fact": "泛搜单次会话人均点击详情页约2.4次，但仅约30%最终发生导航或电话等深度行为。", "course_evidence_ids": ["48A-MAP-COMMENT-C00060"], "confidence": "high", "notes": ""},
+    {"fact": "课件将根因归为列表页信息不足而非召回或排序，但该判断主要基于结果相关和用户愿意停留浏览，仍应结合分层数据或实验验证排除其他原因。", "course_evidence_ids": ["48A-MAP-COMMENT-C00061", "48A-MAP-COMMENT-C00068"], "confidence": "medium", "notes": "课件自身也提出“结果不相关”等替代原因需要针对性分析。"}
+  ],
+  "solution_overview": [
+    {"fact": "从百度地图站内、与POI强绑定的用户评论中召回符合质量标准的评论，并在列表页POI卡片底部展示一条精选摘要。", "course_evidence_ids": ["48A-MAP-COMMENT-C00072-R002", "48A-MAP-COMMENT-C00076", "48A-MAP-COMMENT-C00083-R001"], "confidence": "high", "notes": ""},
+    {"fact": "一期评论质量规则包括内容有效性55%、时效性30%、信息增量15%，合规性为一票否决。", "course_evidence_ids": ["48A-MAP-COMMENT-C00077-R002", "48A-MAP-COMMENT-C00077-R003", "48A-MAP-COMMENT-C00077-R004", "48A-MAP-COMMENT-C00077-R005"], "confidence": "high", "notes": ""},
+    {"fact": "泛需求优先展示，连锁品牌展示门店专属评论；非商业POI不展示，其他场景按评论质量和增量价值处理。", "course_evidence_ids": ["48A-MAP-COMMENT-C00080", "48A-MAP-COMMENT-C00081-R002", "48A-MAP-COMMENT-C00081-R003", "48A-MAP-COMMENT-C00081-R004", "48A-MAP-COMMENT-C00081-R005", "48A-MAP-COMMENT-C00081-R006"], "confidence": "high", "notes": ""}
+  ],
+  "key_decisions": [
+    {"fact": "一期仅接入评论正文、评分、时间、POI ID和用户ID等必需字段；点赞数作为可选字段暂不接入，避免一期需求过重。", "course_evidence_ids": ["48A-MAP-COMMENT-C00074-R002", "48A-MAP-COMMENT-C00074-R003", "48A-MAP-COMMENT-C00074-R004", "48A-MAP-COMMENT-C00074-R005", "48A-MAP-COMMENT-C00074-R006", "48A-MAP-COMMENT-C00074-R007", "48A-MAP-COMMENT-C00075"], "confidence": "high", "notes": ""},
+    {"fact": "每个POI只展示一条30至50字评论，最多两行；无合格评论时不占位，回退原卡片。", "course_evidence_ids": ["48A-MAP-COMMENT-C00078", "48A-MAP-COMMENT-C00083-R001"], "confidence": "high", "notes": ""}
+  ],
+  "decision_rationales": [
+    {"fact": "评论提供评分、距离等客观结构化字段之外的真实体验和差异化信息，目的是降低用户在详情页间反复比较的成本。", "course_evidence_ids": ["48A-MAP-COMMENT-C00027-R003", "48A-MAP-COMMENT-C00056", "48A-MAP-COMMENT-C00057", "48A-MAP-COMMENT-C00062-R002", "48A-MAP-COMMENT-C00062-R003"], "confidence": "high", "notes": ""}
+  ],
+  "experiment_designs": [
+    {"fact": "上线前随机抽取300条泛需求Query，对优化前后Top5 POI进行相关性、真实性、卡片体验和信息增量的GSB评估，G+S超过90%视为有效。", "course_evidence_ids": ["48A-MAP-COMMENT-C00085", "48A-MAP-COMMENT-C00087-R002", "48A-MAP-COMMENT-C00087-R003", "48A-MAP-COMMENT-C00087-R004", "48A-MAP-COMMENT-C00087-R005", "48A-MAP-COMMENT-C00089", "48A-MAP-COMMENT-C00090", "48A-MAP-COMMENT-C00091", "48A-MAP-COMMENT-C00092"], "confidence": "high", "notes": ""},
+    {"fact": "AB实验按User ID随机分流，对照组保持原列表页，实验组增加评论模块，两组各50%，实验周期2周，仅覆盖泛需求Query。", "course_evidence_ids": ["48A-MAP-COMMENT-C00095-R002", "48A-MAP-COMMENT-C00095-R003", "48A-MAP-COMMENT-C00095-R004", "48A-MAP-COMMENT-C00095-R005"], "confidence": "high", "notes": ""}
+  ],
+  "result_metrics": [
+    {"fact": "GSB结果G+S为96%，内容质量合格，但部分评论与基础信息重复，卡片体验仍需优化。", "course_evidence_ids": ["48A-MAP-COMMENT-C00098"], "confidence": "high", "notes": ""},
+    {"fact": "AB后Top1 CTR从23%提升至27.8%，快速放弃率从34%下降至29.8%，课件建议推全。", "course_evidence_ids": ["48A-MAP-COMMENT-C00100", "48A-MAP-COMMENT-C00101", "48A-MAP-COMMENT-C00102"], "confidence": "high", "notes": ""}
+  ],
+  "ownership_boundaries": [
+    {"fact": "PM负责需求字段、评论质量与展示规则、触发场景和评估标准；研发负责入库、内容池、召回接口与端接入，评估团队按标准执行打分并与PM复核边界案例。", "course_evidence_ids": ["48A-MAP-COMMENT-C00046-R003", "48A-MAP-COMMENT-C00046-R004", "48A-MAP-COMMENT-C00072-R003", "48A-MAP-COMMENT-C00076", "48A-MAP-COMMENT-C00085"], "confidence": "high", "notes": ""},
+    {"fact": "课件描述了PM职责，但没有明确把所有决策归属于实习生个人；面试表达时应区分团队、正式员工和本人贡献。", "course_evidence_ids": ["48A-MAP-COMMENT-C00044-R002", "48A-MAP-COMMENT-C00046-R003", "48A-MAP-COMMENT-C00046-R004"], "confidence": "high", "notes": ""}
+  ],
+  "dependencies": [
+    {"fact": "项目依赖站内评论数据、POI强绑定字段、评论召回能力、端展示接入和评估团队。", "course_evidence_ids": ["48A-MAP-COMMENT-C00072-R002", "48A-MAP-COMMENT-C00074-R002", "48A-MAP-COMMENT-C00074-R005", "48A-MAP-COMMENT-C00046-R003", "48A-MAP-COMMENT-C00046-R004"], "confidence": "high", "notes": ""}
+  ],
+  "ambiguities": [
+    {"fact": "逐字稿把GSB听写为JSB；结合课件可确认上线前评估名称为GSB（Good/Same/Bad）。", "course_evidence_ids": ["48A-MAP-COMMENT-C00084", "48A-MAP-COMMENT-C00085"], "confidence": "high", "notes": "属于ASR问题，不应判定候选人术语错误。"}
+  ],
+  "not_covered": [
+    {"fact": "课件没有提供候选人本人独立提出评论方案或独立完成根因判断的证据。", "course_evidence_ids": ["48A-MAP-COMMENT-C00044-R002", "48A-MAP-COMMENT-C00046-R003", "48A-MAP-COMMENT-C00046-R004"], "confidence": "high", "notes": "个人贡献需要以逐字稿和本人补充为准。"}
+  ],
+  "source_document_ids": ["48A-MAP-COMMENT"]
+}

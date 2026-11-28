@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "project_id": "jd_ai_technician_workorder_embedding",
+  "facts": {
+    "business_goal": {"value": "通过改善技师问答效率，间接支撑老店单店GMV和老店同店比。", "evidence_ids": ["AIT-C00034", "AIT-C00035", "AIT-C00037", "AIT-C00038"]},
+    "user_and_problem": {"value": "技师先在工单录入车辆信息，再打开独立AI问答；AI看不到既有工单数据，因缺失信息而重复追问，造成重复输入与效率损失。", "evidence_ids": ["AIT-C00046", "AIT-C00090", "AIT-C00091"]},
+    "baseline": {"value": "平均对话轮次5.2轮，技师满意度65%；43%的对话因缺失信息触发追问，其中39个百分点可由工单数据避免。", "evidence_ids": ["AIT-C00093-R003", "AIT-C00093-R004", "AIT-C00093-R005", "AIT-C00093-R006", "AIT-C00105"]},
+    "solution": {"value": "将AI问答从独立入口嵌入工单页浮窗，携带工单ID并调用工单数据；本次工单信息同步获取，历史维修等数据异步加载，匹配不到的工况等信息继续向技师追问。", "evidence_ids": ["AIT-C00154", "AIT-C00156", "AIT-C00159", "AIT-C00161", "AIT-C00169"]},
+    "validation": {"value": "上线前先做离线评测和人工抽样，随后按北京50家、全国200家、全量门店分阶段灰度；验证注入正确性、历史关联、追问消灭和降级策略。", "evidence_ids": ["AIT-C00179", "AIT-C00184", "AIT-C00195"]},
+    "results": {"value": "全量阶段工单信息注入成功率99.5%，平均对话轮次3.3轮，追问率13%，技师满意度78%，人工抽样正例占比92%。", "evidence_ids": ["AIT-C00197", "AIT-C00201", "AIT-C00202", "AIT-C00203"]},
+    "metric_boundaries": {"value": "工单信息注入成功率、Top3检索准确率和人工抽样正例占比不是同一指标；Context注入的50条离线验证中Top3准确率由90%至95%。", "evidence_ids": ["AIT-C00133-R004", "AIT-C00190", "AIT-C00197"]}
+  }
+}

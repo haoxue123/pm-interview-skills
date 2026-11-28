@@ -1,0 +1,12 @@
+{
+  "project_id": "baidu_map_poi_label_taxonomy",
+  "project_name": "商业搜索 POI 标签体系完善",
+  "source_documents": [{"path": "[local source redacted]"}],
+  "facts": {
+    "business_problem": {"value": "商业搜索相关性问题中，POI 标签缺失、错误或过宽会使意图正确的 Query 仍无法召回合适 POI。", "evidence_ids": ["BAIDU46-C00125", "BAIDU46-C00130", "BAIDU46-C00133", "BAIDU46-C00135"]},
+    "gsb": {"value": "从低 CTR 高曝光 Query 按四行业分层抽样，每行业75条共300条；每条查看 Top5 召回 POI，按 G/S/B 相关性打分。它是策略前基准快照，优化后以相同口径比较 Good/Bad 占比。", "evidence_ids": ["BAIDU46-C00119", "BAIDU46-C00121", "BAIDU46-C00122", "BAIDU46-C00123"]},
+    "solution": {"value": "存量标签修复、第三方数据同步与大模型辅助打标并行；大模型从评论和商家介绍抽取属性标签，按置信度自动入库、人工复核或丢弃。", "evidence_ids": ["BAIDU46-C00139-R002", "BAIDU46-C00139-R003", "BAIDU46-C00139-R004", "BAIDU46-C00169"]},
+    "result": {"value": "核心标签准确率73%至93%，字段完整率67%至79%，商业搜索召回相关性79%至83%，商业化 CTR 2.8%至3.20%；标签缺失导致的 B 类结果28%至11%。ECPM 或 CPC 的增幅不是本项目结果。", "evidence_ids": ["BAIDU46-C00178-R002", "BAIDU46-C00178-R003", "BAIDU46-C00178-R004", "BAIDU46-C00178-R005", "BAIDU46-C00178-R006", "BAIDU46-C00043-R016", "BAIDU46-C00043-R017"]},
+    "responsibility": {"value": "PM做问题 Case 分析、规则和需求推进；POI 运营批量核查修正；工程处理第三方数据接收、清洗和入库；评估团队主做 GSB，PM参与边界口径校准。", "evidence_ids": ["BAIDU46-C00122", "BAIDU46-C00139-R002", "BAIDU46-C00150"]}
+  }
+}
